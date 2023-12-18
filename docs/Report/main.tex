@@ -1,0 +1,113 @@
+\documentclass[12pt,a4paper]{report}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{ragged2e}
+\usepackage{arabtex}
+\usepackage{utf8}
+\setcode{utf8}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage[margin=25mm]{geometry}
+\usepackage[compact]{titlesec}
+\usepackage{svg}
+\usepackage{subcaption}
+\usepackage{acronym}
+\usepackage{minitoc}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{footnote}
+\usepackage[noadjust]{cite}
+\usepackage[section]{placeins}
+\usepackage{mathtools}
+\newtagform{fn}{(}{)\footnotemark}
+
+\usepackage[hyperfootnotes,hidelinks]{hyperref}
+\hypersetup{
+    linktoc=all
+}
+
+\renewcommand{\contentsname}{Table of Contents}
+
+%----------EDIT COVER INFO HERE -----------------%
+
+\def \LOGOPATH {assets/birzeit-logo.png}
+\def \UNIVERSITY {Birzeit University}
+\def \FACULTY {Faculty of Engineering \& Technology}
+\def \DEPARTEMENT {Department of Electrical \& Computer Engineering}
+\def \PROJECTTITLE {Project Title}
+\def \STUDENTA {Student 1}
+\def \STUDENTB {Student 2}
+\def \STUDENTC {Student 3}
+\def \SUPERVISOR {Dr. Ahmad Ahmad}
+
+%------------------------------------------------%
+
+\begin{document}
+\setlength{\parindent}{0em}
+\setlength{\parskip}{0.5em}
+
+\pagenumbering{Roman}
+
+\begin{titlepage}
+    \vfill
+    \begin{center}
+        \includegraphics[width=0.6\textwidth]{\LOGOPATH} \\
+        \fontsize{14pt}{14pt}\selectfont
+        \vfill
+        \UNIVERSITY \\
+        \FACULTY \\
+        \DEPARTEMENT \\
+        \vfill
+        \fontsize{17.28pt}{17.28pt}\selectfont
+        \textbf{\PROJECTTITLE}
+        \vfill
+        \fontsize{14pt}{14pt}\selectfont
+        Prepared By: \\
+        \STUDENTA \\
+        \STUDENTB \\
+        \STUDENTC
+        \vfill
+        Supervised By: \\
+        \SUPERVISOR
+        \vfill
+        A Graduation Project submitted to the Department of Electrical and Computer Engineering in partial fulfillment of the requirements for the degree of B.Sc. in Computer Engineering
+        \vfill
+        Birzeit \\
+        April, 2022
+    \end{center}
+\end{titlepage}
+
+\dominitoc
+
+\include{chapters/abstract}
+
+\cleardoublepage \phantomsection \addcontentsline{toc}{chapter}{Table of Contents} \mtcaddchapter \tableofcontents
+
+\cleardoublepage \phantomsection \addcontentsline{toc}{chapter}{List of Tables} \mtcaddchapter \listoftables
+
+\cleardoublepage \phantomsection \addcontentsline{toc}{chapter}{List of Figures} \mtcaddchapter \listoffigures
+
+\cleardoublepage
+
+\setlength{\parindent}{0em}
+\setlength{\parskip}{0.5em}
+
+\pagenumbering{arabic}
+
+\include{chapters/introduction_and_motivation}
+
+\include{chapters/background}
+
+\include{chapters/vit_acceleration_techniques}
+
+\include{chapters/proposed_work}
+
+\include{chapters/project_plan}
+
+\include{chapters/conclusion}
+
+\cleardoublepage \phantomsection \addcontentsline{toc}{chapter}{Bibliography} \mtcaddchapter
+\bibliographystyle{ieeetr.bst}
+\bibliography{cites}
+
+\end{document}
