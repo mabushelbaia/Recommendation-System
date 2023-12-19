@@ -14,7 +14,7 @@ In order to for the system to be useful it has to meet the following specificati
 Scalability implies that it has to be cloud-native, the inference system should apply proper load balancing across multi-node, multi model deployments.
 
 \subsection{Real-time predictions}
-To be usable in any website or application, the system should be able to provide real-time predictions, suggestions, with few milliseconds latency. \\
+To be usable in any website or application, the system should be able to provide real-time predictions, suggestions, with few milliseconds latency.
 
 To fulfil this requirement, trained models should run on optimized inference servers or services, the suggested deployment plan is to use
 \textbf{Nvidia Triton}
@@ -32,7 +32,9 @@ Elasticity is vital for keeping up with traffic spikes and declines while optimi
 
 \subsection{Security}
 
-Like any other system, the system has to be immune to security threats by implementing best practices at every level in the deployment and design. \\ \\
+Like any other system, the system has to be immune to security threats by implementing best practices at every level in the deployment and design. 
+
+
 \textit{e.g} rate-limiting requests to interaction injection endpoints, using attestation when possible, limiting access to user and product CRUD operations.
 
 \section{Related Work}
@@ -49,10 +51,10 @@ Rexy is a Python library that provides a general-purpose recommendation system f
 Gorse is an open source recommender system engine implemented in Go that provides a scalable and flexible recommendation system framework. It supports a variety of algorithms, including collaborative filtering, content-based filtering, and deep learning.
 
 \subsection{AWS Personalize \cite{AWSPersonalize}}
-Amazon Personalize allows developers to quickly build and deploy curated recommendations and intelligent user segmentation at scale using machine learning (ML). Because Amazon Personalize can be tailored to your individual needs, you can deliver the right customer experience at the right time and in the right place. \\
+Amazon Personalize allows developers to quickly build and deploy curated recommendations and intelligent user segmentation at scale using machine learning (ML). Because Amazon Personalize can be tailored to your individual needs, you can deliver the right customer experience at the right time and in the right place. 
 
 \subsection{Google Recommendations AI \cite{GoogleRecommendationsAI}}
-Recommendations AI enables you to build an end-to-end personalized recommendation system based on state-of-the-art deep learning ML models, without a need for expertise in ML or recommendation systems. \\
+Recommendations AI enables you to build an end-to-end personalized recommendation system based on state-of-the-art deep learning ML models, without a need for expertise in ML or recommendation systems. 
 
 \subsection{NvidiaMerlin \cite{NvidiaMerlin}}
 
