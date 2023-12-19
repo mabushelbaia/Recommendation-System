@@ -19,6 +19,7 @@
 \usepackage[noadjust]{cite}
 \usepackage[section]{placeins}
 \usepackage{mathtools}
+\usepackage{setspace} 
 \newtagform{fn}{(}{)\footnotemark}
 
 \usepackage[hyperfootnotes,hidelinks]{hyperref}
@@ -34,10 +35,13 @@
 \def \UNIVERSITY {Birzeit University}
 \def \FACULTY {Faculty of Engineering \& Technology}
 \def \DEPARTEMENT {Department of Electrical \& Computer Engineering}
-\def \PROJECTTITLE {Accelerated Cloud Native DLRM-based E-commerce Recommendation System}
-\def \STUDENTA {Ibraheem Alyan}
+\def \PROJECTTITLE {Accelerated DLRM-based E-commerce Recommendation System}
+\def \STUDENTA {Ibraheem Alyan }
+\def \STUDENTAID {1201180}
 \def \STUDENTB {Mohammad Abu-Shelbaia}
+\def \STUDENTBID {1200198}
 \def \STUDENTC {Nidal Zabade}
+\def \STUDENTCID {1200153}
 \def \SUPERVISOR {Dr. Ahmed Shawahna}
 
 %------------------------------------------------%
@@ -45,7 +49,7 @@
 \begin{document}
 \setlength{\parindent}{0em}
 \setlength{\parskip}{0.5em}
-
+\setstretch{1.6}
 \pagenumbering{Roman}
 
 \begin{titlepage}
@@ -54,29 +58,29 @@
         \includegraphics[width=0.6\textwidth]{\LOGOPATH} \\
         \fontsize{14pt}{14pt}\selectfont
         \vfill
-        \UNIVERSITY \\
-        \FACULTY \\
+        % \fontsize{18pt}\textbf{\UNIVERSITY} \\
+        \textbf{\FACULTY} \\
         \DEPARTEMENT \\
         \vfill
         \fontsize{17.28pt}{17.28pt}\selectfont
         \textbf{\PROJECTTITLE}
+        \fontsize{14pt}{14pt}\selectfont 
         \vfill
-        \fontsize{14pt}{14pt}\selectfont
-        Prepared By: \\
-        \STUDENTA \\
-        \STUDENTB \\
-        \STUDENTC
+        \textbf{Prepared By:} \\
+        \STUDENTA \quad \STUDENTAID \\
+        \STUDENTB \quad \STUDENTBID \\
+        \STUDENTC \quad \STUDENTCID
         \vfill
-        Supervised By: \\
+        \textbf{Supervised By:} \\
         \SUPERVISOR
         \vfill
         A Graduation Project submitted to the Department of Electrical and Computer Engineering in partial fulfillment of the requirements for the degree of B.Sc. in Computer Engineering
         \vfill
         Birzeit \\
-        December, 2023
+        \today
     \end{center}
 \end{titlepage}
-
+\setstretch{1}
 \dominitoc
 
 \include{chapters/abstract}
