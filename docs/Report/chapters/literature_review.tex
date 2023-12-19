@@ -1,4 +1,4 @@
-\chapter{Literature Review}
+\chapter{Requirements \& Literature Review}
 \minitoc
 
 \section{Functional Requirements}
@@ -39,12 +39,124 @@ Like any other system, the system has to be immune to security threats by implem
 
 There are many open-source and paid solutions that provide recommendation systems and libraries, this section discusses some of them.
 
-\subsection{LightFM  }
+\subsection{LightFM \cite{LightFM}}
 is a Python library that implements a variety of recommendation algorithms, including collaborative filtering, content-based filtering, and hybrid methods. It is easy to use and produces high-quality results.
 
+\subsection{Rexy \cite{Rexy}}
+Rexy is a Python library that provides a general-purpose recommendation system framework. It is flexible and can be adapted to a variety of data schemas.
 
-TODO
+\subsection{Gorse \cite{Rexy}}
+Gorse is an open source recommender system engine implemented in Go that provides a scalable and flexible recommendation system framework. It supports a variety of algorithms, including collaborative filtering, content-based filtering, and deep learning.
 
-\section{Related Paid Solutions}
+\subsection{AWS Personalize \cite{AWSPersonalize}}
+Amazon Personalize allows developers to quickly build and deploy curated recommendations and intelligent user segmentation at scale using machine learning (ML). Because Amazon Personalize can be tailored to your individual needs, you can deliver the right customer experience at the right time and in the right place. \\
 
-TODO
+\subsection{Google Recommendations AI \cite{GoogleRecommendationsAI}}
+Recommendations AI enables you to build an end-to-end personalized recommendation system based on state-of-the-art deep learning ML models, without a need for expertise in ML or recommendation systems. \\
+
+\subsection{NvidiaMerlin \cite{NvidiaMerlin}}
+
+NVIDIA Merlin is an open source library providing end-to-end GPU-accelerated recommender systems, from feature engineering and preprocessing to training deep learning models and running inference in production.
+
+The frameworks, discussed in more depth later, provides many components including:
+
+\begin{itemize}
+    \item Merlin Models
+    \item Merlin NVTabular
+    \item Merlin HugeCTR
+    \item Merlin Transformers4Rec
+    \item Merlin SOK (SparseOperationsKit)
+    \item Merlin Distributed Embeddings (DE)
+    \item Merlin Systems
+\end{itemize}
+
+Making it a very customizable and extensible solution.
+
+\begin{table}[h]
+    \centering
+    \caption{Comparison of Recommendation Solutions}
+    \footnotesize
+    \setlength{\tabcolsep}{12pt} % Adjust the spacing between columns
+    \renewcommand{\arraystretch}{1.5} % Adjust the spacing between rows
+    \begin{tabular}{|l|l|}
+        \hline
+        \textbf{System} & \textbf{LightFM} \\
+        \cline{2-2}
+        \textbf{License} & Apache 2.0 \\
+        \cline{2-2}
+        \textbf{Algorithm Type} & Matrix Factorization \\
+        \cline{2-2}
+        \textbf{Hardware Utilization} & CPU \\
+        \cline{2-2}
+        \textbf{Deployment Readiness} & Library (Additional Components Needed) \\
+        \cline{2-2}
+        \textbf{Notes} & - \\
+        \hline
+        \hline
+        \textbf{System} & \textbf{Rexy} \\
+        \cline{2-2}
+        \textbf{License} & MIT \\
+        \cline{2-2}
+        \textbf{Algorithm Type} & Matrix Factorization \\
+        \cline{2-2}
+        \textbf{Hardware Utilization} & CPU \\
+        \cline{2-2}
+        \textbf{Deployment Readiness} & Library (Additional Components Needed) \\
+        \cline{2-2}
+        \textbf{Notes} & - \\
+        \hline
+        \hline
+        \textbf{System} & \textbf{Gorse} \\
+        \cline{2-2}
+        \textbf{License} & Apache 2.0 \\
+        \cline{2-2}
+        \textbf{Algorithm Type} & Matrix Factorization \\
+        \cline{2-2}
+        \textbf{Hardware Utilization} & CPU \\
+        \cline{2-2}
+        \textbf{Deployment Readiness} & Single-node-learning multi-node-inference cluster \\
+        \cline{2-2}
+        \textbf{Notes} & Unreliable and has many bugs \\
+        \hline
+        \hline
+        \textbf{System} &\textbf{AWS Personalize} \\
+        \cline{2-2}
+        \textbf{License} & Proprietary \\
+        \cline{2-2}
+        \textbf{Algorithm Type} & DLRM \\
+        \cline{2-2}
+        \textbf{Hardware Utilization} & - \\
+        \cline{2-2}
+        \textbf{Deployment Readiness} & A lot of customization required  \\
+        \cline{2-2}
+        \textbf{Notes} & High customization, predictions, and training fees \\
+        \hline
+        \hline
+        \textbf{System} & \textbf{Google Recommendations AI} \\
+        \cline{2-2}
+        \textbf{License} & Proprietary \\
+        \cline{2-2}
+        \textbf{Algorithm Type} & DLRM \\
+        \cline{2-2}
+        \textbf{Hardware Utilization} & - \\
+        \cline{2-2}
+        \textbf{Deployment Readiness} & End-to-End service \\
+        \cline{2-2}
+        \textbf{Notes} & High predictions, and training fees \\
+        \hline
+        \hline
+        \textbf{System} & \textbf{Nvidia Merlin} \\
+        \cline{2-2}
+        \textbf{License} & Apache 2.0 \\
+        \cline{2-2}
+        \textbf{Algorithm Type} & Multiple Options  \\
+        \cline{2-2}
+        \textbf{Hardware Utilization} & Optimized for Nvidia GPUs \\
+        \cline{2-2}
+        \textbf{Deployment Readiness} & Recommendation pipelines components \\
+        \cline{2-2}
+        \textbf{Notes} & Very customizable \\
+        \hline
+    \end{tabular}
+\end{table}
+        
