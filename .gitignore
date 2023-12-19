@@ -12,6 +12,9 @@
 *.cb2
 .*.lb
 
+
+main.pdf
+
 ## Intermediate documents:
 *.dvi
 *.xdv
