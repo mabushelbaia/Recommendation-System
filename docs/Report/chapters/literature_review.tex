@@ -18,7 +18,7 @@ To be usable in any website or application, the system should be able to provide
 
 To fulfil this requirement, trained models should run on optimized inference servers or services, the suggested deployment plan is to use
 \textbf{Nvidia Triton}
-\footnote{Nvidia Triton Inference Server, part of the Nvidia AI platform and available with Nvidia AI Enterprise, is open-source software that standardizes AI model deployment and execution across every workload. \cite{Triton}}
+\footnote{Nvidia Triton Inference Server, part of the Nvidia AI platform and available with Nvidia AI Enterprise, is open-source software that standardizes AI model deployment and execution across every workload \cite{Triton}}. 
 inference server \cite{Triton}, 
 integrated with \textbf{Amazon SageMaker} model deployment \cite{SageMaker} as infrastructure.
 
@@ -33,14 +33,14 @@ Elasticity is vital for keeping up with traffic spikes and declines while optimi
 \subsection{Security}
 
 Like any other system, the system has to be immune to security threats by implementing best practices at every level in the deployment and design. \\ \\
-\textit{e.g} rate-limiting requests to interaction injection endpoints, using attestation when possible, limiting access to user and product CRUD operations.
+For example, rate-limiting requests to interaction injection endpoints, using attestation when possible, limiting access to user and product create, read, update, and delete (CRUD) operations.
  
 \section{Related Work}
 
 There are many open-source and paid solutions that provide recommendation systems and libraries, this section discusses some of them.
 
 \subsection{LightFM}
-A Python library that enables the classic matrix factorization techniques to include metadata about both items and users, incorporating both content and collaborative information into the recommendation process ( hybrid ). \cite{LightFM} \\
+A Python library that enables the classic matrix factorization techniques to include metadata about both items and users, incorporating both content and collaborative information into the recommendation process ( hybrid )\cite{LightFM}.  \\
 
 Its approach is described with more depth in the LightFM paper \cite{kula2015metadata}.
 
