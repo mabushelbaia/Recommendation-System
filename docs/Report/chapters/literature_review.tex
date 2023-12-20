@@ -1,5 +1,5 @@
 \chapter{Requirements And Literature Review}
-\minitoc
+\minitoc 
 
 \section{Functional Requirements}
 
@@ -8,15 +8,15 @@ The API provides endpoints that allow inserting customers, products, and interac
 
 \section{System Requirements}
 
-In order to for the system to be useful it has to meet the following specifications:
+In order for the system to be useful it has to meet the following specifications:
 
 \subsection{Scalability}
-Scalability implies that it has to be cloud-native, the inference system should apply proper load balancing across multi-node, multi model deployments.
+Scalability implies that it has to be cloud-native, the inference system should apply proper load balancing across multi-node, multi-model deployments.
 
-\subsection{Real-time predictions}
-To be usable in any website or application, the system should be able to provide real-time predictions, suggestions, with few milliseconds latency. \\
+\subsection{Real-time Predictions}
+To be usable in any website or application, the system should be able to provide real-time predictions, and suggestions, with a few milliseconds latency. \\
 
-To fulfil this requirement, trained models should run on optimized inference servers or services, the suggested deployment plan is to use
+To fulfill this requirement, trained models should run on optimized inference servers or services, the suggested deployment plan is to use
 \textbf{Nvidia Triton}
 \footnote{Nvidia Triton Inference Server, part of the Nvidia AI platform and available with Nvidia AI Enterprise, is open-source software that standardizes AI model deployment and execution across every workload \cite{Triton}}. 
 inference server \cite{Triton}, 
@@ -24,7 +24,7 @@ integrated with \textbf{Amazon SageMaker} model deployment \cite{SageMaker} as i
 
 \subsection{Near Real-time Training}
 
-This implies continuous training and deployment of model which requires the automation of training and deployment.
+This implies continuous training and deployment of the model which requires the automation of training and deployment.
 
 \subsection{Elasticity And Optimization}
 
@@ -33,7 +33,7 @@ Elasticity is vital for keeping up with traffic spikes and declines while optimi
 \subsection{Security}
 
 Like any other system, the system has to be immune to security threats by implementing best practices at every level in the deployment and design. \\ \\
-For example, rate-limiting requests to interaction injection endpoints, using attestation when possible, limiting access to user and product create, read, update, and delete (CRUD) operations.
+For example, rate-limiting requests to interaction injection endpoints, using attestation when possible, and limiting access to user and product create, read, update, and delete (CRUD) operations.
  
 \section{Related Work}
 
@@ -45,10 +45,10 @@ A Python library that enables the classic matrix factorization techniques to inc
 Its approach is described with more depth in the LightFM paper \cite{kula2015metadata}.
 
 \subsection{Rexy}
-Rexy\cite{Rexy} is a Python library that provides a general-purpose recommendation system framework. It is flexible and can be adapted to a variety of data schemas \cite{Rexy}.
+Rexy \cite{Rexy} is a Python library that provides a general-purpose recommendation system framework. It is flexible and can be adapted to a variety of data schemas \cite{Rexy}.
 
 \subsection{Gorse}
-Gorse\cite{Gorse} is an open source recommender system engine implemented in Go that provides a scalable and flexible recommendation system framework. It supports a variety of algorithms, including collaborative filtering, content-based filtering, and deep learning \cite{Rexy}.
+Gorse \cite{Gorse} is an open-source recommender system engine implemented in Go that provides a scalable and flexible recommendation system framework. It supports a variety of algorithms, including collaborative filtering, content-based filtering, and deep learning \cite{Rexy}.
 
 \subsection{AWS Personalize}
 According to Amazon Web Services (AWS), developers can utilize Amazon Personalize \cite{AWSPersonalize} to rapidly create and implement customized recommendations and sophisticated user segmentation on a large scale through machine learning (ML). This service is adaptable to individual requirements, enabling the delivery of personalized customer experiences at the optimal moment and location\footnote{AWS description of the service \cite{AWSPersonalize} }. \\
@@ -60,7 +60,7 @@ As outlined by Google on their cloud marketplace\footnote{Google Cloud Marketpla
 
 Nidia defines Merlin \cite{NvidiaMerlin} as "an open source library providing end-to-end GPU-accelerated recommender systems, from feature engineering and preprocessing to training deep learning models and running inference in production." \footnote{Nvidia Merlin Repository \cite{NvidiaMerlinRepo}}. \\
 
-The frameworks, discussed in more depth later, provides many components including:
+The frameworks, discussed in more depth later, provide many components including:
 \begin{itemize}
     \item Merlin Models \cite{MerlinModels}
     \item Merlin NVTabular \cite{MerlinNVTabular}

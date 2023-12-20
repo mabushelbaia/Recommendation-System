@@ -2,8 +2,8 @@
 \minitoc
 
 \section{Recommendation Systems}\label{sec:recommendation-systems}
-"A recommendation system is an artificial intelligence or AI algorithm, usually associated with machine learning, that uses Big Data to suggest or recommend additional products to consumers. These can be based on various criteria, including past purchases, search history, demographic information, and other factors." \cite{NvidiaRecSys} \\ \\
-Recommender systems undergo training to understand the preferences, earlier decisions, and attributes of the user and products using their past interactions which includes impressions, clicks, purchases, and ratings. Recommender systems are usually used by content and product providers to suggest items to users that they may like based on their profile and preferences. 
+A recommendation system is an artificial intelligence or AI algorithm, usually associated with machine learning, that uses Big Data to suggest or recommend additional products to consumers. These can be based on various criteria, including past purchases, search history, demographic information, and other factors. \cite{NvidiaRecSys} \\ \\
+Recommender systems undergo training to understand the preferences, earlier decisions, and attributes of the user and products using their past interactions which include impressions, clicks, purchases, and ratings. Recommender systems are usually used by content and product providers to suggest items to users that they may like based on their profiles and preferences. 
 
 \section{Types of Recommendation Systems}\label{sec:types-of-recommendation-systems}
 
@@ -14,7 +14,7 @@ Context Filtering is a technique that uses the contextual information of the use
     \includegraphics[width=0.7\textwidth]{assets/contextual-sequence-prediction.png}
     \caption[Context Filtering Diagram]{Context Filtering Diagram \cite{NvidiaRecSys}} 
 \end{figure}
-\subsection{Variational Autoencoder for Col laborative Filtering}
+\subsection{Variational Autoencoder for Collaborative Filtering}
 This model consists of two parts: an encoder and a decoder. The encoder takes the user's preferences as input and encodes them into a latent space. The decoder takes the latent space as input and decodes it into the item's features.
 \begin{figure}[H]
     \centering
@@ -25,7 +25,7 @@ This model consists of two parts: an encoder and a decoder. The encoder takes th
 \subsection{Collaborative Filtering}
 A technique that filters out products that a customer might like based on reactions by similar users. It functions by clustering customers into smaller sets with similar interests. Then it uses the items they show interest in to create a ranked suggestions list. The idea behind this technique is that individuals who have previously agreed will continue to do so in the future.
 \subsection{Content Filtering}
-A technique that uses the features of items a user has interacted with to recommend more items with similar features. This technique is based on the idea that if a customer showed interest in a particular product, he will also be interested in a similar product. \\
+A technique that uses the features of items a user has interacted with to recommend more items with similar features. This technique is based on the idea that if a customer shows interest in a particular product, he will also be interested in a similar product. \\
 
 
 
@@ -43,14 +43,14 @@ A technique that uses the features of items a user has interacted with to recomm
         \caption{Collaborative Filtering Diagram}
         \label{fig:collaborative-filtering}
     \end{subfigure}
-    \caption[Nvidia Golssary Diagram]{Nvidia Golssary Diagram \cite{NvidiaRecSys}}
+    \caption[Nvidia Glossary Diagram]{Nvidia Glossary Diagram \cite{NvidiaRecSys}}
 \end{figure}
 
 
 \subsection{Hybrid Recommendation Systems}
 Combine the advantages of multiple types of recommendation algorithms to create a more comprehensive recommending system.
 \subsection{Neural Collaborative Filtering}
-NCF is a technique that uses neural networks to learn the customer's preferences and recommend items. It uses one neural network that learn the customer's preferences and a another neural network that learns the item's features. The two networks are then combined to create a recommendation.
+NCF is a technique that uses neural networks to learn the customer's preferences and recommend items. It uses one neural network that learns the customer's preferences and another neural network that learns the item's features. The two networks are then combined to create a recommendation.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{assets/neural-collaborative-filtering.png}
@@ -59,10 +59,10 @@ NCF is a technique that uses neural networks to learn the customer's preferences
 \end{figure}
 
 \subsection{Contextual Sequence Learning}
-Contextual Sequence Learning is a technique that takes into account the context and sequence of user's action, it usually uses a recurrent neural network (RNN).
+Contextual Sequence Learning is a technique that takes into account the context and sequence of the user's action, it usually uses a recurrent neural network (RNN).
 An example use case is session-based recommendations, RNNs predict the next items based on user event sequences, mirroring word embedding in NLP.
 \subsection{Wide And Deep}
-Wide \& Deep is a technique that uses a wide neural network to learn the preferences of the customer and utilizes another deep neural network to learn the products's features. The wide model is generalized linear model (GLM) and the deep model built from a dense neural network (DNN).
+Wide \& Deep is a technique that uses a wide neural network to learn the preferences of the customer and utilizes another deep neural network to learn the products's features. The wide model is a generalized linear model (GLM) and the deep model is built from a dense neural network (DNN).
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{assets/wide_deep.png}
@@ -71,7 +71,7 @@ Wide \& Deep is a technique that uses a wide neural network to learn the prefere
 \end{figure}
 
 \subsection{DLRM}
-Deep Learning Recommendation Model (DLRM) it is a technique that uses a deep neural network to handle categorical and numerical features. Each categorical feature is represented as a one-hot vector and each numerical feature is represented as a dense vector, both fed into multi-layer perceptron (MLP) layers. The output of the MLP layers is then fed into a dot product layer to compute the inner product of the feature vectors. The output of the dot product layer is then fed into a sigmoid layer to compute the probability of the user liking the item.
+Deep Learning Recommendation Model (DLRM) is a technique that uses a deep neural network to handle categorical and numerical features. Each categorical feature is represented as a one-hot vector and each numerical feature is represented as a dense vector, both fed into multi-layer perceptron (MLP) layers. The output of the MLP layers is then fed into a dot product layer to compute the inner product of the feature vectors. The output of the dot product layer is then fed into a sigmoid layer to compute the probability of the user liking the item.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{assets/dlrm.png}
