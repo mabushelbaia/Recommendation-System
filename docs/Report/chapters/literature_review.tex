@@ -4,7 +4,7 @@
 \section{Functional Requirements}
 
 The system should provide a RESTful API as the final interface to be used by the front-end application.
-The API provides endpoints that allow inserting customers, products, and interactions. It also provides endpoints for retrieving the recommendations for a given customer.
+The API provides endpoints that allow inserting customers, products, and interactions. In addition to endpoints for retrieving the recommendations for a given customer.
 
 \section{System Requirements}
 
@@ -14,7 +14,7 @@ In order to for the system to be useful it has to meet the following specificati
 Scalability implies that it has to be cloud-native, the inference system should apply proper load balancing across multi-node, multi model deployments.
 
 \subsection{Real-time predictions}
-To be usable in any website or application, the system should be able to provide real-time predictions, suggestions, with few milliseconds latency.
+To be usable in any website or application, the system should be able to provide real-time predictions, suggestions, with few milliseconds latency. \\
 
 To fulfil this requirement, trained models should run on optimized inference servers or services, the suggested deployment plan is to use
 \textbf{Nvidia Triton}
@@ -32,9 +32,7 @@ Elasticity is vital for keeping up with traffic spikes and declines while optimi
 
 \subsection{Security}
 
-Like any other system, the system has to be immune to security threats by implementing best practices at every level in the deployment and design. 
-
-
+Like any other system, the system has to be immune to security threats by implementing best practices at every level in the deployment and design. \\ \\
 \textit{e.g} rate-limiting requests to interaction injection endpoints, using attestation when possible, limiting access to user and product CRUD operations.
 
 \section{Related Work}
@@ -42,7 +40,9 @@ Like any other system, the system has to be immune to security threats by implem
 There are many open-source and paid solutions that provide recommendation systems and libraries, this section discusses some of them.
 
 \subsection{LightFM \cite{LightFM}}
-is a Python library that implements a variety of recommendation algorithms, including collaborative filtering, content-based filtering, and hybrid methods. It is easy to use and produces high-quality results.
+A Python library that enables the classic matrix factorization techniques to include metadata about both items and users, incorporating both content and collaborative information into the recommendation process ( hybrid ). \\
+
+Its approach is described with more depth in the LightFM paper \cite{kula2015metadata}.
 
 \subsection{Rexy \cite{Rexy}}
 Rexy is a Python library that provides a general-purpose recommendation system framework. It is flexible and can be adapted to a variety of data schemas.
@@ -51,25 +51,24 @@ Rexy is a Python library that provides a general-purpose recommendation system f
 Gorse is an open source recommender system engine implemented in Go that provides a scalable and flexible recommendation system framework. It supports a variety of algorithms, including collaborative filtering, content-based filtering, and deep learning.
 
 \subsection{AWS Personalize \cite{AWSPersonalize}}
-Amazon Personalize allows developers to quickly build and deploy curated recommendations and intelligent user segmentation at scale using machine learning (ML). Because Amazon Personalize can be tailored to your individual needs, you can deliver the right customer experience at the right time and in the right place. 
+"Amazon Personalize allows developers to quickly build and deploy curated recommendations and intelligent user segmentation at scale using machine learning (ML). Because Amazon Personalize can be tailored to your individual needs, you can deliver the right customer experience at the right time and in the right place." \footnote{AWS description of the service \cite{AWSPersonalize} } \\
 
 \subsection{Google Recommendations AI \cite{GoogleRecommendationsAI}}
-Recommendations AI enables you to build an end-to-end personalized recommendation system based on state-of-the-art deep learning ML models, without a need for expertise in ML or recommendation systems. 
+Google describes it as "Recommendations AI enables you to build an end-to-end personalized recommendation system based on state-of-the-art deep learning ML models, without a need for expertise in ML or recommendation systems."\footnote{Google Cloud Marketplace \cite{GoogleMarketplaceRecAi}} \\
 
-\subsection{NvidiaMerlin \cite{NvidiaMerlin}}
+\subsection{Nvidia Merlin \cite{NvidiaMerlin}}
 
-NVIDIA Merlin is an open source library providing end-to-end GPU-accelerated recommender systems, from feature engineering and preprocessing to training deep learning models and running inference in production.
+"NVIDIA Merlin is an open source library providing end-to-end GPU-accelerated recommender systems, from feature engineering and preprocessing to training deep learning models and running inference in production." \footnote{Nvidia Merlin Repository \cite{NvidiaMerlinRepo}} \\
 
 The frameworks, discussed in more depth later, provides many components including:
-
 \begin{itemize}
-    \item Merlin Models
-    \item Merlin NVTabular
-    \item Merlin HugeCTR
-    \item Merlin Transformers4Rec
+    \item Merlin Models \cite{MerlinModels}
+    \item Merlin NVTabular \cite{MerlinNVTabular}
+    \item Merlin HugeCTR \cite{MerlinHugeCTR}
+    \item Merlin Transformers4Rec \cite{MerlinTransformer4Rec}
     \item Merlin SOK (SparseOperationsKit)
     \item Merlin Distributed Embeddings (DE)
-    \item Merlin Systems
+    \item Merlin Systems \cite{MerlinSystemsRepo}
 \end{itemize}
 
 Making it a very customizable and extensible solution.
