@@ -2,7 +2,7 @@
 \minitoc
 
 \section{Recommendation Systems}\label{sec:recommendation-systems}
-"A recommendation system is an artificial intelligence or AI algorithm, usually associated with machine learning, that uses Big Data to suggest or recommend additional products to consumers. These can be based on various criteria, including past purchases, search history, demographic information, and other factors."\cite{NvidiaRecSys} \\ \\
+"A recommendation system is an artificial intelligence or AI algorithm, usually associated with machine learning, that uses Big Data to suggest or recommend additional products to consumers. These can be based on various criteria, including past purchases, search history, demographic information, and other factors." \cite{NvidiaRecSys} \\ \\
 Recommender systems undergo training to understand the preferences, earlier decisions, and attributes of the user and products using their past interactions which includes impressions, clicks, purchases, and ratings. Recommender systems are usually used by content and product providers to suggest items to users that they may like based on their profile and preferences. 
 
 \section{Types of Recommendation Systems}\label{sec:types-of-recommendation-systems}
@@ -12,18 +12,15 @@ Context Filtering is a technique that uses the contextual information of the use
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.7\textwidth]{assets/contextual-sequence-prediction.png}
-    \caption{Context Filtering Diagram}
-    \label{fig:costextual-filtering}
-    \cite{NvidiaRecSys}
+    \caption[Context Filtering Diagram]{Context Filtering Diagram \cite{NvidiaRecSys}} 
 \end{figure}
-\subsection{Variational Autoencoder for Collaborative Filtering}
+\subsection{Variational Autoencoder for Col laborative Filtering}
 This model consists of two parts: an encoder and a decoder. The encoder takes the user's preferences as input and encodes them into a latent space. The decoder takes the latent space as input and decodes it into the item's features.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.7\textwidth]{assets/variational-autoencoder.png}
-    \caption{Variational Autoencoder for Collaborative Filtering Structure}
+    \caption[Variational Autoencoder for Collaborative Filtering Structure]{Variational Autoencoder for Collaborative Filtering Structure \cite{NvidiaRecSys}}
     \label{fig:variational-autoencoder-for-collaborative-filtering}
-    \cite{NvidiaRecSys}
 \end{figure}
 \subsection{Collaborative Filtering}
 A technique that filters out products that a customer might like based on reactions by similar users. It functions by clustering customers into smaller sets with similar interests. Then it uses the items they show interest in to create a ranked suggestions list. The idea behind this technique is that individuals who have previously agreed will continue to do so in the future.
@@ -45,9 +42,8 @@ A technique that uses the features of items a user has interacted with to recomm
         \includegraphics[width=0.95\linewidth]{assets/collaborative_filtering.png}
         \caption{Collaborative Filtering Diagram}
         \label{fig:collaborative-filtering}
-        
     \end{subfigure}
-    \caption{Nvidia Golssary Diagram\cite{NvidiaRecSys}}
+    \caption[Nvidia Golssary Diagram]{Nvidia Golssary Diagram \cite{NvidiaRecSys}}
 \end{figure}
 
 
@@ -58,9 +54,8 @@ NCF is a technique that uses neural networks to learn the customer's preferences
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{assets/neural-collaborative-filtering.png}
-    \caption{Neural Collaborative Filtering}
+    \caption[Neural Collaborative Filtering]{Neural Collaborative Filtering \cite{NvidiaRecSys}}
     \label{fig:neural-collaborative-filtering}
-    \cite{NvidiaRecSys}
 \end{figure}
 
 \subsection{Contextual Sequence Learning}
@@ -71,9 +66,8 @@ Wide \& Deep is a technique that uses a wide neural network to learn the prefere
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{assets/wide_deep.png}
-    \caption{Wide Deep Structure}
+    \caption[Wide Deep Structure]{Wide Deep Structure \cite{NvidiaRecSys}}
     \label{fig:wide-deep}
-    \cite{NvidiaRecSys}
 \end{figure}
 
 \subsection{DLRM}
@@ -81,7 +75,6 @@ Deep Learning Recommendation Model (DLRM) it is a technique that uses a deep neu
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{assets/dlrm.png}
-    \caption{DLRM Structure}
+    \caption[DLRM Structure]{DLRM Structure \cite{NvidiaRecSys}}
     \label{fig:dlrm}
-    \cite{NvidiaRecSys}
 \end{figure}
