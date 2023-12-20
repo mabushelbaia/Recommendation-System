@@ -34,7 +34,7 @@ Elasticity is vital for keeping up with traffic spikes and declines while optimi
 
 Like any other system, the system has to be immune to security threats by implementing best practices at every level in the deployment and design. \\ \\
 \textit{e.g} rate-limiting requests to interaction injection endpoints, using attestation when possible, limiting access to user and product CRUD operations.
-
+ 
 \section{Related Work}
 
 There are many open-source and paid solutions that provide recommendation systems and libraries, this section discusses some of them.
@@ -45,20 +45,20 @@ A Python library that enables the classic matrix factorization techniques to inc
 Its approach is described with more depth in the LightFM paper \cite{kula2015metadata}.
 
 \subsection{Rexy}
-Rexy is a Python library that provides a general-purpose recommendation system framework. It is flexible and can be adapted to a variety of data schemas. \cite{Rexy}
+Rexy\cite{Rexy} is a Python library that provides a general-purpose recommendation system framework. It is flexible and can be adapted to a variety of data schemas \cite{Rexy}.
 
 \subsection{Gorse}
-Gorse is an open source recommender system engine implemented in Go that provides a scalable and flexible recommendation system framework. It supports a variety of algorithms, including collaborative filtering, content-based filtering, and deep learning. \cite{Rexy}
+Gorse\cite{Gorse} is an open source recommender system engine implemented in Go that provides a scalable and flexible recommendation system framework. It supports a variety of algorithms, including collaborative filtering, content-based filtering, and deep learning \cite{Rexy}.
 
 \subsection{AWS Personalize}
-"Amazon Personalize allows developers to quickly build and deploy curated recommendations and intelligent user segmentation at scale using machine learning (ML). Because Amazon Personalize can be tailored to your individual needs, you can deliver the right customer experience at the right time and in the right place." \footnote{AWS description of the service \cite{AWSPersonalize} } \\
+According to Amazon Web Services (AWS), developers can utilize Amazon Personalize \cite{AWSPersonalize} to rapidly create and implement customized recommendations and sophisticated user segmentation on a large scale through machine learning (ML). This service is adaptable to individual requirements, enabling the delivery of personalized customer experiences at the optimal moment and location\footnote{AWS description of the service \cite{AWSPersonalize} }. \\
 
 \subsection{Google Recommendations AI}
-Google describes it as "Recommendations AI enables you to build an end-to-end personalized recommendation system based on state-of-the-art deep learning ML models, without a need for expertise in ML or recommendation systems."\footnote{Google Cloud Marketplace \cite{GoogleMarketplaceRecAi}} \\
+As outlined by Google on their cloud marketplace\footnote{Google Cloud Marketplace Recommendations AI Page\cite{GoogleMarketplaceRecAi}}, Recommendations AI \cite{GoogleRecommendationsAI} allows individuals to develop a fully personalized recommendation system utilizing state-of-the-art deep learning ML models, without requiring expertise in ML or recommendation systems. \\
 
 \subsection{Nvidia Merlin}
 
-"NVIDIA Merlin is an open source library providing end-to-end GPU-accelerated recommender systems, from feature engineering and preprocessing to training deep learning models and running inference in production." \footnote{Nvidia Merlin Repository \cite{NvidiaMerlinRepo}} \\
+Nidia defines Merlin \cite{NvidiaMerlin} as "an open source library providing end-to-end GPU-accelerated recommender systems, from feature engineering and preprocessing to training deep learning models and running inference in production." \footnote{Nvidia Merlin Repository \cite{NvidiaMerlinRepo}}. \\
 
 The frameworks, discussed in more depth later, provides many components including:
 \begin{itemize}
