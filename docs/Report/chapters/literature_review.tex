@@ -58,9 +58,8 @@ As outlined by Google on their cloud marketplace\footnote{Google Cloud Marketpla
 
 \subsection{Nvidia Merlin}
 
-Nidia defines Merlin \cite{NvidiaMerlin} as "an open source library providing end-to-end GPU-accelerated recommender systems, from feature engineering and preprocessing to training deep learning models and running inference in production." \footnote{Nvidia Merlin Repository \cite{NvidiaMerlinRepo}}. \\
-
-The frameworks, discussed in more depth later, provide many components including:
+Nidia defines Merlin \cite{NvidiaMerlin} as "an open source library providing end-to-end GPU-accelerated recommender systems, from feature engineering and preprocessing to training deep learning models and running inference in production." \footnote{Nvidia Merlin Repository \cite{NvidiaMerlinRepo}}. 
+\\The frameworks, discussed in more depth later, provide many components including:
 \begin{itemize}
     \item Merlin Models \cite{MerlinModels}
     \item Merlin NVTabular \cite{MerlinNVTabular}
@@ -161,3 +160,27 @@ Making it a very customizable and extensible solution.
     \end{tabular}
 \end{table}
         
+\section{Recommendation System Purpose and Components}
+\subsection{Purpose}
+The purpose of a recommendation system is to provide personalized suggestions to users based on their preferences and interactions. The system should be able to provide recommendations for new users and items, as well as for existing users and items. The system should also be able to provide real-time recommendations and be able to handle large amounts of data and traffic.
+\subsection{Recommendation System Stages}
+Any system is a group of components that work together to achieve a goal according to a set of rules. The recommendation system is no different, it is a group of components that work together to provide personalized suggestions to users. There is two recommendation system types based of the number of stages they have:
+\subsection*{Two-stage Recommender Systems}
+Two-stage recommender systems are systems that have two main stages: candidate generation and ranking. The candidate generation stage is responsible for generating a set of candidate items for each user, while the ranking stage is responsible for ranking the candidate items and selecting the top items to be recommended to the user. The candidate generation stage is usually based on collaborative filtering or content-based filtering, while the ranking stage is usually based on machine learning models such as matrix factorization or deep learning models.\cite{MultiStageRecSys}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{assets/Two_stage_rec_sys.jpg}
+    \caption{Two-stage Recommender System\cite{MultiStageRecSys}}
+\end{figure}
+\subsection*{Four-stage Recommender Systems}
+Four-stage recommender systems are systems that have four main stages: retrieval, filtering, scoring, ordering. The retrieval stage is responsible for retrieving a set of candidate items for each user, the filtering stage is responsible for filtering the candidate items and selecting the top items to be scored, the scoring stage is responsible for scoring the candidate items, and the ordering stage is responsible for ordering the scored items and selecting the top items to be recommended to the user. The retrieval stage is usually based on collaborative filtering or content-based filtering, while the filtering stage is usually based on machine learning models such as matrix factorization or deep learning models, and the scoring and ordering stages are usually based on machine learning models such as deep learning models.\cite{NvidiaRecSysBestPractices}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{assets/Four_stage_rec_sys.png}
+    \caption{Four-stage Recommender System\cite{NvidiaRecSysBestPractices}}
+\end{figure}
+each stage has its own components and algorithms, and divided into two main categories: offline and online components.
+\subsection*{Offline Components}
+Offline components are components that are responsible for training the machine learning models and generating the recommendation data. The offline components are usually based on batch processing and are responsible for generating the recommendation data in a batch manner.\cite{NvidiaOfflineToOnline}
+\subsection*{Online Components}
+Online components are components that are responsible for serving the recommendation data to the users. The online components are usually based on real-time processing and are responsible for serving the recommendation data in a real-time manner.\cite{NvidiaOfflineToOnline}
