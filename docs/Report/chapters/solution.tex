@@ -10,10 +10,18 @@
     * data ingestion
     * adding new customers, items, and interaction endpoints 
     * getting recommendations for a customer endpoint [ and how it first queries the caching layer and then the recommendation pipeline]
+* Recommendation Pipeline ( all the stages )
+    * Retrieval
+    * Filtering
+    * Scoring
+    * Ordering
+* Caching Layer
+* Automation and DevOps
+* Components Deployment ( ECS or Kubernetes, SageMaker or Triton Inference Server, Redis or Memcached, which feature store )?
 
-* data store
 
-\subsection{Retrieval Stage}
+
+\subsection{Two Tower Model (Retrieval Stage)}
 
 * embedding store?
 * choosing a ranking model and explaining it
@@ -26,7 +34,7 @@ TODO
 * Explaining the E-commerce business logic
 
 
-\subsection{Scoring Stage}
+\subsection{Deep Learning Ranking Model (Scoring Stage)}
 
 * feature store 
 * choosing a ranking model and explaining it
@@ -35,13 +43,13 @@ TODO
 
 TODO
 
-\subsection{Ordering Stage}
+\subsection{E-commerce ordering logic (Ordering Stage)}
 
 * add additional business logic like promoting items (sponsored items), write an equation for the final score ( maybe ranking score + 0.2 for sponsored items or put sponsored items on top of the list if they exceed a certain threshold score)
 
 TODO
 
-\subsection{Caching Layer}
+\subsection{Storing Results (Caching Layer)}
 
 * Redis or any memory store
 
