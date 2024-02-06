@@ -1,0 +1,53 @@
+\chapter{Solution}
+
+
+* Terminology: The item is now a product, and the user is now a customer of an e-commerce platform
+
+\subsection{System Components}
+
+
+* API gateway
+    * data ingestion
+    * adding new customers, items, and interaction endpoints 
+    * getting recommendations for a customer endpoint [ and how it first queries the caching layer and then the recommendation pipeline]
+
+* data store
+
+\subsection{Retrieval Stage}
+
+* embedding store?
+* choosing a ranking model and explaining it
+
+TODO 
+
+\subsection{Filtering Stage}
+
+TODO
+* Explaining the E-commerce business logic
+
+
+\subsection{Scoring Stage}
+
+* feature store 
+* choosing a ranking model and explaining it
+* storing model parameters?
+
+
+TODO
+
+\subsection{Ordering Stage}
+
+* add additional business logic like promoting items (sponsored items), write an equation for the final score ( maybe ranking score + 0.2 for sponsored items or put sponsored items on top of the list if they exceed a certain threshold score)
+
+TODO
+
+\subsection{Caching Layer}
+
+* Redis or any memory store
+
+TODO
+
+\subsection{Deployment of components ?}
+
+
+\minitoc
