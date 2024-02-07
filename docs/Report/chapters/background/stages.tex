@@ -22,7 +22,7 @@ indicating potential relevance and making them strong candidates for recommendat
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.6\textwidth]{assets/ann.png}
-    \caption{ANN Voronoi Diagram\cite{AnnVoronoi}}
+    \caption[ANN Voronoi Diagram]{ANN Voronoi Diagram \cite{AnnVoronoi}}
     \label{fig:AnnVoronoi}
 \end{figure}
 
@@ -37,14 +37,14 @@ based on previous user-item interactions thanks to deep neural networks.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.6\textwidth]{assets/two_tower.jpeg}
-    \caption{Two-Tower Model\cite{TwoTowerInRecSys}}
+    \caption[Two-Tower Model]{Two-Tower Model \cite{TwoTowerInRecSys}}
     \label{fig:TwoTowerModel}
 \end{figure}
 
 The output of the two-tower model is a vector representing the similarity between item embedding and user embedding, 
 it indicates the user's level of interest in the specified item.
 
-Similarity can be either Cosine Similarity, Euclidean Distance, but cosine is more popular in recommendation systems because it is less sensitive to the magnitude of the vectors, as shown in equation \ref{eq:cosine_similarity}.
+Similarity can be either Cosine Similarity, or Euclidean Distance, but cosine is more popular in recommendation systems because it is less sensitive to the magnitude of the vectors, as shown in equation \ref{eq:cosine_similarity}.
 
 \begin{equation}
     \text{Cosine Similarity} = \frac{A \cdot B}{\|A\| \|B\|}
@@ -65,12 +65,7 @@ Another simpler approach is to use a rule-based system, where the system applies
 
 \subsection{Scoring Stage}
 
-TODO
-
 \subsection{Ordering Stage}
 
-TODO
 
 \subsection{Caching Layer}
-
-TODO
