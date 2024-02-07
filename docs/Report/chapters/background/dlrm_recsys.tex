@@ -32,7 +32,7 @@ To deal with high cardinality categorical features, the deep learning recommenda
 \subsubsection{Features embedding}
 Feature embedding is a technique used to represent categorical features as dense vectors of real numbers, where each unique value of the categorical feature is represented by a unique vector. The feature embedding technique is used to reduce the dimensionality of the categorical features and to learn the relationships between the unique values of the categorical features.\cite{FeatureEmbedding}
 \subsubsection{Targaet encoding}
-Target encoding is a technique used to encode categorical features based on the target variable, where the categorical feature is encoded based on the mean of the target variable for each unique value of the categorical feature. The target encoding technique is used to encode categorical features with high cardinality and to reduce the dimensionality of the categorical features.\cite{TargetEncoding}
+The target encoding technique is employed to encode categorical features with high cardinality by using the mean of the target variable for each unique value of the categorical feature. This technique helps reduce the dimensionality of the categorical features while encoding them based on their relationship with the target variable.\cite{TargetEncoding}
 \subsection{Training (Offline)}
 Like any machine learning system, the process of training the models occurs offline,
 where the system is trained on a set of historical data, aka batched data, to optimize the model's parameters.
