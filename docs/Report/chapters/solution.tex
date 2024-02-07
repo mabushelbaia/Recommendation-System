@@ -3,7 +3,19 @@
 
 * Terminology: The item is now a product, and the user is now a customer of an e-commerce platform
 
-\subsection{System Components}
+\section{System Components}
+
+
+!!! TODO say we will build the "custom Ops" in the following graph
+
+TODO maybe we have to create our own custom graph to add caching, API gateway, and automation and DevOps components with our own infrastructure 
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{assets/components.jpeg}
+    \caption{System Components\cite{NvidiaRecSysBestPractices}}
+\end{figure}
+
 
 
 * API gateway
@@ -21,17 +33,19 @@
 
 
 
-\subsection{Two Tower Model (Retrieval Stage)}
+\section{Candidate Generation}
 
+
+
+
+\subsection{Two Tower Model (Retrieval)}
 * embedding store?
 * choosing a ranking model and explaining it
 
+\subsection{Bloom Filte (Filtering)}
+* Explaining the E-commerce business logic
 TODO 
 
-\subsection{Filtering Stage}
-
-TODO
-* Explaining the E-commerce business logic
 
 
 \subsection{Deep Learning Ranking Model (Scoring Stage)}

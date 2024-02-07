@@ -1,10 +1,67 @@
 \subsection{Retrieval Stage}
 
-TODO 
+To save resources and make a recommendation system effective, the first stage of it is retrieval, 
+where the system aims to narrow down the massive 
+catalog of items (potentially millions) to a much smaller, 
+manageable pool of candidates (around hundreds or thousands).
+This initial filtering is crucial because 
+directly running the ranking model on every item for every 
+user would be computationally expensive and unnecessary.
+
+There are two main approaches to retrieval, which are the Approximate Nearest Neighbor (ANN) search and the Two-Tower Model.
+
+\subsubsection{Approximate Nearest Neighbor (ANN)}
+
+One popular approach to retrieval uses embedding models. 
+These models create a dense vector space where users and items are represented as points.
+Approximate Nearest Neighbor (ANN) search,
+which identifies items closest to the user's representation in the space, 
+indicating potential relevance and making them strong candidates for recommendation.
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{assets/ann.png}
+    \caption{ANN Voronoi Diagram\cite{AnnVoronoi}}
+    \label{fig:AnnVoronoi}
+\end{figure}
+
+\subsubsection{Two-Tower Model}
+
+Another popular approach to retrieval is using a two-tower model, 
+The concept for this model design is rather straightforward; as the diagram in Figure \ref{fig:TwoTowerModel} illustrates, it consists of two completely independent towers, 
+one for the user and one for the item. 
+The model can learn high-level abstract representations for a user and an item 
+based on previous user-item interactions thanks to deep neural networks. 
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{assets/two_tower.jpeg}
+    \caption{Two-Tower Model\cite{TwoTowerInRecSys}}
+    \label{fig:TwoTowerModel}
+\end{figure}
+
+The output of the two-tower model is a vector representing the similarity between item embedding and user embedding, 
+it indicates the user's level of interest in the specified item.
+
+Similarity can be either Cosine Similarity, Euclidean Distance, but cosine is more popular in recommendation systems because it is less sensitive to the magnitude of the vectors, as shown in equation \ref{eq:cosine_similarity}.
+
+\begin{equation}
+    \text{Cosine Similarity} = \frac{A \cdot B}{\|A\| \|B\|}
+    \label{eq:cosine_similarity}
+\end{equation}
+
 
 \subsection{Filtering Stage}
 
-TODO
+After retrieving a set of candidate items, the next stage is filtering them according to business rules and constraints.
+This stage ensures that only valid candidates are passed to the scoring stage.
+For example, products that are out of stock, or products that users already bought.
+
+One possible approach to filtering is using a Bloom filter, which is a space-efficient probabilistic data structure that is used to test whether an element is a member of a set.
+
+Another simpler approach is to use a rule-based system, where the system applies a set of rules to the candidate items to filter out the invalid ones, but it might be less performant than the Bloom filter.
+
 
 \subsection{Scoring Stage}
 

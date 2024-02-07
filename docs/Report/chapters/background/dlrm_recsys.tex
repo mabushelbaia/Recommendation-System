@@ -32,18 +32,40 @@ where the system is trained on a set of historical data, aka batched data, to op
 
 
 \subsection{Real-Time Inference (Online)}
-The inference phase is when the system makes the predictions and suggestions for the application, 
-in order to be useful in any website or application, 
+The inference phase is when the system makes the predictions and suggestions for the application.
+To be useful in any website or application, 
 the system should be able to provide real-time predictions, 
 and suggestions, with a few hundred milliseconds of latency.
 
-In online inference, the system computes the recommendation in Real-time based on the user's interactions and preferences, usually with user actions being the trigger for the recommendation generation process.
+In online inference, the system computes the recommendation in Real-time based on the user's interactions and preferences, 
+usually with user actions being the trigger for the recommendation generation process.
+
+Figure \ref{fig:TwoStageOnline} shows a pipeline suggested by Nvidia\cite{NvidiaOfflineToOnline} for a two-stage online recommendation system.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{assets/online-two-stage-recommender-pipeline.png}
+    \caption{Two Stage Online Recommendation System \cite{NvidiaOfflineToOnline}}
+    \label{fig:TwoStageOnline}
+\end{figure}
+
+
 
 \subsection{Batch Inference (Offline)}
 Unlike online inference, batch inference is the process of generating recommendations in advance and storing them, 
 where the system computes the recommendations for all users and items, 
-the process is repeated on a periodical basis.\cite{NvidiaOfflineToOnline}
+the process is repeated on a periodical basis.\cite{NvidiaOfflineToOnline} 
+Figure \ref{fig:BatchRecSys} illustrates from a high perspective how a completely offline recommendation system operates.
 
 This process allows much shorter response times and is useful for systems with a large number of users and items and a high volume of traffic.
 
 Online and batched inference can be used together to provide real-time recommendations, where the system periodically pre-computes the recommendations for active users, but for new users, the system computes the recommendations in Real-time.
+
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{assets/batch-recommendation-system.png}
+    \caption{Batch Recommendation System \cite{NvidiaOfflineToOnline}}
+    \label{fig:BatchRecSys}
+\end{figure}
