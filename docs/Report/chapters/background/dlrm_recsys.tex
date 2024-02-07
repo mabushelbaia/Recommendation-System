@@ -26,7 +26,14 @@ stages are usually based on machine learning models such as deep learning models
     \caption[Four-stage Recommender System]{Four-stage Recommender System\cite{NvidiaRecSysBestPractices}}
 \end{figure}
 each stage utilizes a set of components and algorithms in training and inference processes to achieve its goal.
-\subsection{Trianing (Offline)}
+\subsection{Dealing with categorical features}
+One of the main challenges in building a recommendation system is dealing with high cardinality categorical features, which are features that have a large number of unique values. The high cardinality of categorical features makes it difficult to use traditional machine learning models such as linear regression and decision trees, as these models require the categorical features to be one-hot encoded, which results in a large number of features and a large model size. 
+To deal with high cardinality categorical features, the deep learning recommendation model (DLRM) uses several techniques such as:
+\subsubsection{Features embedding}
+Feature embedding is a technique used to represent categorical features as dense vectors of real numbers, where each unique value of the categorical feature is represented by a unique vector. The feature embedding technique is used to reduce the dimensionality of the categorical features and to learn the relationships between the unique values of the categorical features.\cite{FeatureEmbedding}
+\subsubsection{Targaet encoding}
+The target encoding technique is employed to encode categorical features with high cardinality by using the mean of the target variable for each unique value of the categorical feature. This technique helps reduce the dimensionality of the categorical features while encoding them based on their relationship with the target variable.\cite{TargetEncoding}
+\subsection{Training (Offline)}
 Like any machine learning system, the process of training the models occurs offline,
 where the system is trained on a set of historical data, aka batched data, to optimize the model's parameters.
 
