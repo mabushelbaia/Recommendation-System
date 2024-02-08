@@ -3,6 +3,51 @@
 
 \section{Conclusion}
 
+TODO
+
 \section{Future Work}
 
-\subsection{Caching Layer}
+There are many possible improvements and future work that can be done to the system, 
+some of them are related to the model and data, and others are related to the system architecture and infrastructure.
+
+The following sections will discuss some of the possible future work and improvements that can be made to improve the system.
+
+\subsection{Deeper Product Features}
+
+One of the main limitations of the current system is the lack of product features related to the product's content, such as the product's description, title, and images.
+Adding these features to the model can improve the recommendation system's accuracy and performance. 
+But to do that, the system needs to be able to process and analyze the product's content, which requires additional layers of data processing and feature extraction.
+
+As an example, to extract features from the product's name and description, the system can use natural language processing (NLP) 
+techniques to extract embeddings representing the product's content, and then use these embeddings as input features to the model.
+
+For images, the system can use computer vision techniques, such as convolutional networks, to extract features from the product's images, and then use these features as input to the model.
+
+\subsection{Increasing Interactions Data}
+
+The current system recommends products solely based on a single type of interaction, which is the user's click history.
+Adding more types of interactions, such as the user's purchase history, the user's rating history, and the user's browsing history, 
+might improve the recommendation system's accuracy and performance.
+
+Moreover, some interaction types might be converted to numeric features for further analysis,
+ for example, a user opens the product page, and stays for a certain amount of time, 
+ that time can be used as a feature to represent the user's interest in the product.
+
+ \subsection{Integrating with Ecommerce Platforms}
+
+The current system is a standalone system that provides an API for the client to interact with.
+To make the system more accessible and easier to use, it can be integrated with popular e-commerce platforms, such as Shopify, Magento, and WooCommerce.
+Such integration can be done by providing plugins or extensions that can be installed on the e-commerce platform, 
+and then the plugin can communicate with the system's API to get recommendations for the platform's users.
+
+\subsection{Session-based Recommendations}
+
+The current system requires re-training to update the model with new data, and it does not take into account the user's current session or context.
+So the customer's interactions do not affect the recommendations until the next re-training cycle.
+
+A major improvement to the system is to add a session-based recommendation model that can provide real-time recommendations based on the user's current session and context.
+Such a model can utilize Recurrent Neural Networks (RNN) with Long Short-Term Memory (LSTM) to capture the user's session and context without requiring prior knowledge of the interactions during training. 
+
+One possible library to use for this purpose is Merlin Transformer4Rec \cite{NvidiaMerlinTransformers4Rec}, 
+which is a flexible and efficient library for sequential and session-based recommendation.\cite{NvidiaMerlinTransformers4Rec}
+

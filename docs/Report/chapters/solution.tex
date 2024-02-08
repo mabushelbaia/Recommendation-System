@@ -113,7 +113,7 @@ It starts with the candidate generation stage, where a set of thousands of candi
 Then the filtering stage filters the candidate items according to business rules and constraints, the scoring stage ranks the candidate items and finally the ordering stage orders 
 the scored items and selects the top items to be recommended to the customer.
 
-\subsection{Candidate Generation}
+\subsection{Candidate Generation (Retrieval)}
 
 To generate the candidate items for each customer, the system starts by retrieving the embeddings of the customer and the products from FEAST (the feature store).
 
@@ -146,7 +146,7 @@ The filtering workflow is implemented using NVTabular \cite{MerlinNVTabular}, an
 
 In production, the filtering workflow is deployed with the deep learning ranking model in the same container.
 
-\subsection{Deep Learning Ranking Model (Scoring Stage)}
+\subsection{Deep Learning Ranking Model (Scoring)}
 
 This stage is the core of the recommendation pipeline, where the system ranks the candidate and filtered products and selects the top products to be recommended to the customer.
 
@@ -168,7 +168,7 @@ The DLRM is trained using a distributed training framework, in this case, it was
 In production, the DLRM is deployed using Nvidia Triton Inference Server \cite{Triton} on a Merlin Inference container \cite{NvidiaMerlinInference} from Nvidia's NGC \cite{NvidiaNGC}.
 AWS SageMaker \cite{AwsSageMaker} automatically scales the number of instances of the Triton Inference Server based on the load.
 
-\subsection{E-commerce ordering logic (Ordering Stage)}
+\subsection{E-commerce ordering logic (Ordering)}
 
 After getting the ranking score of each product for the customer, the system orders the products using the ranking score and business rules, 
 then selects the top products to be recommended to the customer.
