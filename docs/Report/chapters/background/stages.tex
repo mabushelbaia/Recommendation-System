@@ -8,23 +8,8 @@ This initial filtering is crucial because
 directly running the ranking model on every item for every 
 user would be computationally expensive and unnecessary.
 
-There are two main approaches to retrieval, which are the Approximate Nearest Neighbor (ANN) search and the Two-Tower Model.
-
-\subsubsection{Approximate Nearest Neighbor (ANN)}
-
-One popular approach to retrieval uses embedding models. 
-These models create a dense vector space where users and items are represented as points.
-Approximate Nearest Neighbor (ANN) search,
-which identifies items closest to the user's representation in the space, 
-indicating potential relevance and making them strong candidates for recommendation.
-
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.6\textwidth]{assets/ann.png}
-    \caption[ANN Voronoi Diagram]{ANN Voronoi Diagram \cite{AnnVoronoi}}
-    \label{fig:AnnVoronoi}
-\end{figure}
+The recommended approach for retrieval according to Nvidia \cite{NvidiaFeatureStores} is to use a two-tower model in the offline training phase to generate embeddings for users and items.
+Then in the online phase ( serving the recommendations ), an approximate nearest neighbor (ANN) search to retrieve the top candidates for each user and using the tower user alone.
 
 \subsubsection{Two-Tower Model}
 
@@ -52,6 +37,23 @@ Similarity can be either Cosine Similarity, or Euclidean Distance, but cosine is
 \end{equation}
 
 
+\subsubsection{Approximate Nearest Neighbor (ANN)}
+
+One popular approach to retrieval uses embedding models. 
+These models create a dense vector space where users and items are represented as points.
+Approximate Nearest Neighbor (ANN) search,
+which identifies items closest to the user's representation in the space, 
+indicating potential relevance and making them strong candidates for recommendation.
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{assets/ann.png}
+    \caption[ANN Voronoi Diagram]{ANN Voronoi Diagram \cite{AnnVoronoi}}
+    \label{fig:AnnVoronoi}
+\end{figure}
+
+
 \subsection{Filtering Stage}
 
 After retrieving a set of candidate items, the next stage is filtering them according to business rules and constraints.
@@ -72,5 +74,3 @@ Ranking items can be expressed as either a classification problem or a dedicated
 
 \subsection{Ordering Stage}
 In the ordering stage, We narrow down the choices to the best K options, then adjust their order based on specific business needs. For instance, a product category or manufacturer promotion might influence their ranking. \cite{NvidiaRecSysBestPractices}
-
-\subsection{Caching Layer}
