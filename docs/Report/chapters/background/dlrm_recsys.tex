@@ -48,12 +48,12 @@ and suggestions, with a few hundred milliseconds of latency.
 In online inference, the system computes the recommendation in Real-time based on the user's interactions and preferences, 
 usually with user actions being the trigger for the recommendation generation process.
 
-Figure \ref{fig:TwoStageOnline} shows a pipeline suggested by Nvidia\cite{NvidiaOfflineToOnline} for a two-stage online recommendation system.
+Figure \ref{fig:TwoStageOnline} shows a pipeline suggested by Nvidia\cite{NvidiaFeatureStores} for a two-stage online recommendation system.
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=1\textwidth]{assets/online-two-stage-recommender-pipeline.png}
-    \caption[Two Stage Online Recommendation System]{Two Stage Online Recommendation System \cite{NvidiaOfflineToOnline}}
+    \caption[Two Stage Online Recommendation System]{Two Stage Online Recommendation System \cite{NvidiaFeatureStores}}
     \label{fig:TwoStageOnline}
 \end{figure}
 
@@ -62,7 +62,7 @@ Figure \ref{fig:TwoStageOnline} shows a pipeline suggested by Nvidia\cite{Nvidia
 \subsection{Batch Inference (Offline)}
 Unlike online inference, batch inference is the process of generating recommendations in advance and storing them, 
 where the system computes the recommendations for all users and items, 
-the process is repeated on a periodical basis.\cite{NvidiaOfflineToOnline} 
+the process is repeated on a periodical basis.\cite{NvidiaFeatureStores} 
 Figure \ref{fig:BatchRecSys} illustrates from a high perspective how a completely offline recommendation system operates.
 
 This process allows much shorter response times and is useful for systems with a large number of users and items and a high volume of traffic.
@@ -72,6 +72,6 @@ Online and batched inference can be used together to provide real-time recommend
 \begin{figure}[H]
     \centering
     \includegraphics[width=1\textwidth]{assets/batch-recommendation-system.png}
-    \caption[Batch Recommendation System]{Batch Recommendation System \cite{NvidiaOfflineToOnline}}
+    \caption[Batch Recommendation System]{Batch Recommendation System \cite{NvidiaFeatureStores}}
     \label{fig:BatchRecSys}
 \end{figure}
