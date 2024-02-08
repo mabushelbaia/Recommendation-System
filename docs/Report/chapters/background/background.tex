@@ -69,6 +69,23 @@ Wide \& Deep is a technique that uses a wide neural network to learn the prefere
     \caption[Wide Deep Structure]{Wide Deep Structure \cite{NvidiaRecSys}}
     \label{fig:wide-deep}
 \end{figure}
+\subsection{Deep \& Cross Network-V2 (DCN-V2)}
+DCN-V2 builds on the DCN model to excel at ranking tasks. It tackles this by analyzing both direct connections between features and more complex interactions. Unlike DCN, it effectively captures these intricate relationships. This makes it especially good at understanding how individual features influence each other to impact the final ranking.\cite{DCNv2}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{assets/dcn-v2.png}
+    \caption[Deep Cross Network Structure]{Deep Cross Network Structure \cite{DCNv2}}
+    \label{fig:deep-cross-network}
+\end{figure}
+
+\subsection{multi-layer perceptron (MLP)}
+A multi-layer perceptron (MLP) is a class of feedforward artificial neural network. An MLP consists of at least three layers of nodes: an input layer, a hidden layer, and an output layer. Except for the input nodes, each node is a neuron that uses a nonlinear activation function. MLP utilizes a supervised learning technique called backpropagation for training. Its multiple layers and non-linear activation distinguish MLP from a linear perceptron. It can distinguish data that is not linearly separable. \cite{MLP}
+begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{assets/mlp.png}
+    \caption[Multi-Layer Perceptron Structure]{Multi-Layer Perceptron Structure \cite{ExploringMerlinModels}}
+    \label{fig:multi-layer-perceptron}
+\end{figure}
 
 \subsection{DLRM}
 Deep Learning Recommendation Model (DLRM) is a technique that uses a deep neural network to handle categorical and numerical features. 
