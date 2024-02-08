@@ -55,30 +55,38 @@ The AUC metric is used to evaluate the performance of the models on the AliCPP d
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\textwidth]{assets/models_comparasion.png}
+    \includegraphics[width=0.6\textwidth]{assets/models_comparasion.png}
     \caption[AUC Comparison]{AUC Comparison}
     \label{fig:AUCComparison}
 \end{figure}
 
-The results show that all the models had a similar performance with AUC values around 0.5, which indicates that the models are not able to distinguish between positive and negative instances.
+The results show that all the models had a similar performance with AUC values around 0.5, which indicates that the models performed similarly.
+
+Recommending relevant items from millions of possibilities is a significant challenge. 
+Although an AUC score of 0.5 might seem underwhelming, 
+considering it translates to a 50\% chance of the user clicking on a recommended item becomes more impressive. 
+Since systems typically show dozens of items, even a single click signifies the success of the system.
 
 \subsection{Training and Validation}
-We studied the effect of the number of epochs on the training and validation loss using BCE as a loss function. The results are shown in Figure \ref{fig:LossComparison}.
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.8\textwidth]{assets/loss_epochs_20.png}
-    \caption[Loss Comparison]{Loss Comparison}
-    \label{fig:LossComparison}
-\end{figure}
+To study the effect of the number of epochs on the training and validation loss and AUC, we trained the models using BCE as a loss function and plotted the AUC, BCE loss for both training and validation datasets over the number of epochs.
+The results are shown in Figure \ref{fig:LossComparison} and Figure \ref{fig:AUCOverEpochs}.
 
-The results show that the training loss decreases as the number of epochs increases, while the validation loss increases as the number of epochs increases. This indicates that the model is overfitting the training data and is not able to generalize well to the validation data. Furthermore, by plotting the AUC score over the number of epochs, we can confirm that the model has overfitted the training data as shown in Figure \ref{fig:AUCOverEpochs}, where the AUC score for the training data increases as the number of epochs increases, while the AUC score for the validation data is constant around 0.5.
 
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\textwidth]{assets/auc_epochs_20.png}
-    \caption[AUC Over Epochs]{AUC Over Epochs}
-    \label{fig:AUCOverEpochs}
+    \begin{subfigure}{.5\textwidth}
+        \centering
+        \includegraphics[width=0.95\linewidth]{assets/loss_epochs_20.png}
+        \caption[Loss Comparison]{Loss Comparison}
+        \label{fig:LossComparison}
+    \end{subfigure}%
+    \begin{subfigure}{.5\textwidth}
+        \centering
+        \includegraphics[width=0.95\linewidth]{assets/auc_epochs_20.png}
+        \caption[AUC Over Epochs]{AUC Over Epochs}
+        \label{fig:AUCOverEpochs}
+    \end{subfigure}
+    \caption[Measures Over Epoches]{Measures Over Epoches}
 \end{figure}
-
