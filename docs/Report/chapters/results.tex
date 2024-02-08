@@ -44,4 +44,41 @@ the Nvidia Merlin TensorFlow Container \cite{NvidiaMerlinTf} was used as a runti
 
 
 
-\section{Evaluation Metrics}
+\section{Evaluation Results}
+The evaluation of the proposed solution is conducted using the AliCPP dataset using different models like MLP, DLRM, DCN, and Wide\&Deep with an evaluation metric of AUC, Furthermore, we studied the effect of the number of epochs on the training and validation loss and AUC using BCE as a loss function.
+
+\subsection{AUC Comparison}
+
+The Area Under the Curve (AUC) metric describes a model's ability to separate positive and negative instances. A higher AUC indicates stronger distinction between the two classes. Where the AUC value ranges from 0 to 1, where 0.5 is the random guess and 1 is the perfect model.
+
+The AUC metric is used to evaluate the performance of the models on the AliCPP dataset. The results are shown in Figure \ref{fig:AUCComparison}.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{assets/models_comparasion.png}
+    \caption[AUC Comparison]{AUC Comparison}
+    \label{fig:AUCComparison}
+\end{figure}
+
+The results show that all the models had a similar performance with AUC values around 0.5, which indicates that the models are not able to distinguish between positive and negative instances.
+
+\subsection{Training and Validation}
+We studied the effect of the number of epochs on the training and validation loss using BCE as a loss function. The results are shown in Figure \ref{fig:LossComparison}.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{assets/loss_epochs_20.png}
+    \caption[Loss Comparison]{Loss Comparison}
+    \label{fig:LossComparison}
+\end{figure}
+
+The results show that the training loss decreases as the number of epochs increases, while the validation loss increases as the number of epochs increases. This indicates that the model is overfitting the training data and is not able to generalize well to the validation data. Furthermore, by plotting the AUC score over the number of epochs, we can confirm that the model has overfitted the training data as shown in Figure \ref{fig:AUCOverEpochs}, where the AUC score for the training data increases as the number of epochs increases, while the AUC score for the validation data is constant around 0.5.
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{assets/auc_epochs_20.png}
+    \caption[AUC Over Epochs]{AUC Over Epochs}
+    \label{fig:AUCOverEpochs}
+\end{figure}
+
