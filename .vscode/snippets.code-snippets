@@ -1,0 +1,9 @@
+{
+
+	"Add acronym": {
+		"scope": "latex",
+		"prefix": ["acro", "abbr"],
+		"body": ["\\acro{${1:acronym}}{${2:full name}}$0"],
+		"description": "Add acronym"
+	},
+}
