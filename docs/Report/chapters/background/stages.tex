@@ -43,7 +43,7 @@ One popular approach to retrieval uses embedding models.
 These models create a dense vector space where users and items are represented as points.
 ANN search,
 which identifies items closest to the user's representation in the space, 
-indicating potential relevance and making them strong candidates for recommendation.
+indicating potential relevance and making them strong candidates for recommendation. figure \ref{fig:AnnVoronoi} illustrates the concept of ANN search.
 
 
 \begin{figure}[H]
@@ -68,9 +68,9 @@ Another simpler approach is to use a rule-based system, where the system applies
 \subsection{Scoring Stage}
 % Valid candidates are scored using a richer set of user, item, and session features and a more expressive model such as a deep neural network.
 
-In the scoring stage, valid candidates are scored based on their relevance to the user. Precision in this stage is crucial, more features including user, item, and session features are added that wouldn't have been possibly added in the retrieval stage due to the computational and latency constraints since the retrieval stage processes a large number of items. Moreover, a more expressive model can be used in this stage such as DNN. \cite{eugeneyan}
+In the scoring stage, valid candidates are scored based on their relevance to the user. Precision in this stage is crucial, more features including user, item, and session features are added that wouldn't have been possibly added in the retrieval stage due to the computational and latency constraints since the retrieval stage processes a large number of items. Moreover, a more expressive model can be used in this stage such as DNN \cite{eugeneyan}. 
 
-Ranking items can be expressed as either a classification problem or a dedicated learning-to-rank problem. In deep learning applications, the final output layer either employs a softmax function to generate preference scores for a set of items or utilizes a sigmoid function to estimate the probability of user interaction (such as clicking or purchasing) for each possible user-item combination. \cite{eugeneyan}
+Ranking items can be expressed as either a classification problem or a dedicated learning-to-rank problem. In deep learning applications, the final output layer either employs a softmax function to generate preference scores for a set of items or utilizes a sigmoid function to estimate the probability of user interaction (such as clicking or purchasing) for each possible user-item combination \cite{eugeneyan}. 
 
 \subsection{Ordering Stage}
-In the ordering stage, We narrow down the choices to the best K options, then adjust their order based on specific business needs. For instance, a product category or manufacturer promotion might influence their ranking. \cite{NvidiaRecSysBestPractices}
+In the ordering stage, We narrow down the choices to the best K options, then adjust their order based on specific business needs. For instance, a product category or manufacturer promotion might influence their ranking \cite{NvidiaRecSysBestPractices}.
