@@ -2,7 +2,7 @@
 \minitoc
 
 \section{Conclusion}
-In conclusion, the development and deployment of a cutting-edge accelerated e-commerce deep learning recommendation system present both challenges and opportunities. Through the exploration of various recommendation system types, it is evident that deep learning recommendation models (DLRMs) offer promising potential in terms of scalability and performance. However, the evaluation on the AliCPP dataset suggests that while these models perform similarly in terms of AUC metrics, they still face the challenge of effectively recommending relevant items from vast databases.
+In conclusion, the development and deployment of a cutting-edge accelerated e-commerce deep learning recommendation system present both challenges and opportunities. Through the exploration of various recommendation system types, it is evident that DLRMs offer promising potential in terms of scalability and performance. However, the evaluation of the AliCCP dataset suggests that while these models perform similarly in terms of AUC metrics, they still face the challenge of effectively recommending relevant items from vast databases.
 
 Despite the seemingly modest AUC scores around 0.5, it's crucial to contextualize these results within the practical implications of recommendation systems. A 50\% chance of user interaction with recommended items demonstrates considerable success, especially considering the volume of choices users encounter. Even a single click on a recommended item signifies the system's effectiveness in guiding user engagement.
 
@@ -22,7 +22,7 @@ One of the main limitations of the current system is the lack of product feature
 Adding these features to the model can improve the recommendation system's accuracy and performance. 
 But to do that, the system needs to be able to process and analyze the product's content, which requires additional layers of data processing and feature extraction.
 
-As an example, to extract features from the product's name and description, the system can use natural language processing (NLP) 
+As an example, to extract features from the product's name and description, the system can use NLP
 techniques to extract embeddings representing the product's content, and then use these embeddings as input features to the model.
 
 For images, the system can use computer vision techniques, such as convolutional networks, to extract features from the product's images, and then use these features as input to the model.
@@ -50,7 +50,7 @@ The current system requires re-training to update the model with new data, and i
 So the customer's interactions do not affect the recommendations until the next re-training cycle.
 
 A major improvement to the system is to add a session-based recommendation model that can provide real-time recommendations based on the user's current session and context.
-Such a model can utilize Recurrent Neural Networks (RNN) with Long Short-Term Memory (LSTM) to capture the user's session and context without requiring prior knowledge of the interactions during training. 
+Such a model can utilize RNN with LSTM to capture the user's session and context without requiring prior knowledge of the interactions during training. 
 
 One possible library to use for this purpose is Merlin Transformer4Rec \cite{NvidiaMerlinTransformers4Rec}, 
 which is a flexible and efficient library for sequential and session-based recommendation.\cite{NvidiaMerlinTransformers4Rec}

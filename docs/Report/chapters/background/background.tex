@@ -2,7 +2,7 @@
 \minitoc
 
 \section{Recommendation Systems}\label{sec:recommendation-systems}
-A recommendation system is an artificial intelligence or AI algorithm, usually associated with machine learning, that uses Big Data to suggest or recommend additional products to consumers. These can be based on various criteria, including past purchases, search history, demographic information, and other factors. \cite{NvidiaRecSys} \\ \\
+A recommendation system is an artificial intelligence or AI algorithm, usually associated with ML, that uses Big Data to suggest or recommend additional products to consumers. These can be based on various criteria, including past purchases, search history, demographic information, and other factors. \cite{NvidiaRecSys} \\ \\
 Recommender systems undergo training to understand the preferences, earlier decisions, and attributes of the user and products using their past interactions which include impressions, clicks, purchases, and ratings. Recommender systems are usually used by content and product providers to suggest items to users that they may like based on their profiles and preferences. 
 
 \section{Types of Recommendation Systems}\label{sec:types-of-recommendation-systems}
@@ -59,17 +59,17 @@ NCF is a technique that uses neural networks to learn the customer's preferences
 \end{figure}
 
 \subsection{Contextual Sequence Learning}
-Contextual Sequence Learning is a technique that takes into account the context and sequence of the user's action, it usually uses a recurrent neural network (RNN).
+Contextual Sequence Learning is a technique that takes into account the context and sequence of the user's action, it usually uses a RNN.
 An example use case is session-based recommendations, RNNs predict the next items based on user event sequences, mirroring word embedding in NLP.
 \subsection{Wide And Deep}
-Wide \& Deep is a technique that uses a wide neural network to learn the preferences of the customer and utilizes another deep neural network to learn the products's features. The wide model is a generalized linear model (GLM) and the deep model is built from a dense neural network (DNN).
+Wide \& Deep is a technique that uses a wide neural network to learn the preferences of the customer and utilizes another DNN to learn the products's features. The wide model is a GLM and the deep model is built from a dense neural Network.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{assets/wide_deep.png}
     \caption[Wide Deep Structure]{Wide Deep Structure \cite{NvidiaRecSys}}
     \label{fig:wide-deep}
 \end{figure}
-\subsection{Deep \& Cross Network-V2 (DCN-V2)}
+\subsection{Deep \& Cross Network-V2}
 DCN-V2 builds on the DCN model to excel at ranking tasks. It tackles this by analyzing both direct connections between features and more complex interactions. Unlike DCN, it effectively captures these intricate relationships. This makes it especially good at understanding how individual features influence each other to impact the final ranking.\cite{DCNv2}
 \begin{figure}[H]
     \centering
@@ -78,19 +78,19 @@ DCN-V2 builds on the DCN model to excel at ranking tasks. It tackles this by ana
     \label{fig:deep-cross-network}
 \end{figure}
 
-\subsection{Multi-layer perceptron (MLP)}
-Multi-layer perceptron (MLP) is a technique that uses a deep neural network to learn the customer's preferences and recommend items. It uses an embedding layer to learn the customer's preferences and another embedding layer to learn the item's features. The two embedding layers are then combined to create a recommendation.
+\subsection{Multi-layer perceptron}
+MLP is a technique that uses a DNN to learn the customer's preferences and recommend items. It uses an embedding layer to learn the customer's preferences and another embedding layer to learn the item's features. The two embedding layers are then combined to create a recommendation.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.6\textwidth]{assets/mlp.png}
-    \caption[Multi-Layer Perceptron Structure]{Multi-Layer Perceptron Structure \cite{ExploringMerlinModels}}
+    \caption[MLP Structure]{MLP Structure \cite{ExploringMerlinModels}}
     \label{fig:multi-layer-perceptron}
 \end{figure}
 
 \subsection{DLRM}
-Deep Learning Recommendation Model (DLRM) is a technique that uses a deep neural network to handle categorical and numerical features. 
+DLRM is a technique that uses a DNN to handle categorical and numerical features. 
 Each categorical feature is represented as a dense vector produced by an embedding model, 
-and each numerical feature is represented as a dense vector, both fed into multi-layer perceptron (MLP) layers. 
+and each numerical feature is represented as a dense vector, both fed into MLP layers. 
 The output of the MLP layers is then fed into a dot product layer to compute the inner product of the feature vectors. 
 Finally, the output of the dot product layer is then fed into a sigmoid layer to compute the probability of the user liking the item.
 

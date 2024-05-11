@@ -3,7 +3,7 @@
 
 \section{Dataset}
 
-The dataset used in this experiment is called AliCPP and it is a public dataset that contains user-item interactions from an e-commerce platform. The dataset gather traffic logs of recommendation systems in Taobao, a Chinese online shopping website. The dataset is collected from the real-world recommendation system of Taobao.\cite{AliCPP}. The dataset contains of 4 types of features: user features, item features, combination features and context features, each feature is represented by an unique ID, and they described as follows:
+The dataset used in this experiment is called AliCCP and it is a public dataset that contains user-item interactions from an e-commerce platform. The dataset gathers traffic logs of recommendation systems in Taobao, a Chinese online shopping website. The dataset is collected from the real-world recommendation system of Taobao.\cite{AliCPP}. The dataset contains 4 types of features: user features, item features, combination features and context features, each feature is represented by a unique ID, and they are described as follows:
 
 \begin{table}[H]
     \centering
@@ -95,7 +95,7 @@ Figure \ref{fig:V100vsCPU} shows the performance comparison between the Tesla V1
 
 In addition to the hardware environment, the software environment is also important to be considered.
 Having access to \textbf{Nvidia Inception Program} \cite{NvidiaStartups}, 
-which includes access to NVIDIA AI Enterprise \cite{NvidiaAiEnterprise} with \textbf{Nvidia GPU Cloud (NGC) Catalog}\cite{NvidiaNGC}.
+which includes access to NVIDIA AI Enterprise \cite{NvidiaAiEnterprise} with NGC \cite{NvidiaNGC}.
 
 Instead of setting up the drivers, tools, libraries and frameworks manually, 
 the Nvidia AI Enterprise provides a pre-configured flavor of Linux Ubuntu that includes all necessities for deep learning tasks.
@@ -105,13 +105,13 @@ the Nvidia Merlin TensorFlow Container \cite{NvidiaMerlinTf} was used as a runti
 
 
 \section{Evaluation Results}
-solution is conducted using the AliCPP dataset with various models such as Multi-Layer Perceptron (MLP), Deep Learning Recommendation Model (DLRM), Deep \& Cross Network (DCN), Wide\&Deep, and the Two-Tower model. The evaluation metric used is Area Under the ROC Curve (AUC). Furthermore, we studied the impact of the number of epochs on the training and validation loss and Area Under the ROC Curve (AUC), using Binary Cross-Entropy (BCE) as a loss function.
+the solution is conducted using the AliCCP dataset with various models such as MLP, DLRM, DCN, Wide\&Deep, and the Two-Tower model. The evaluation metric used is the AUC. Furthermore, we studied the impact of the number of epochs on the training and validation loss and AUC, using BCE as a loss function.
 \subsection{AUC Comparison}
 
-The Area Under the Curve (AUC) metric describes a model's ability to separate positive and negative instances. A higher AUC indicates stronger distinction between the two classes. Where the AUC value ranges from 0 to 1, where 0.5 is the random guess and 1 is the perfect model.
+AUC metric describes a model's ability to separate positive and negative instances. A higher AUC indicates stronger distinction between the two classes. Where the AUC value ranges from 0 to 1, where 0.5 is the random guess and 1 is the perfect model.
 
-The AUC metric is used to evaluate the performance of the models on the AliCPP dataset. The results are shown in Figure \ref{fig:AUCComparison}.
-
+The AUC metric is used to evaluate the performance of the models on the AliCCP dataset. The results are shown in Figure \ref{fig:AUCComparison}.
+% TODO: Remove this
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.6\textwidth]{assets/models_comparasion.png}
