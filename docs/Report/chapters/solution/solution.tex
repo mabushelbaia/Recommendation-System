@@ -38,8 +38,8 @@ In addition to these functionalities, the API gateway is also responsible for au
 
 To handle the data ingestion, the API gateway exposes the following endpoints:
 \begin{itemize}
-    \item Create, Read, Update, Delete customers
-    \item Create, Read, Update, Delete products
+    \item CRUD customers
+    \item CRUD products
     \item Adding interactions between customers and products
 \end{itemize}
 
@@ -60,7 +60,7 @@ the API gateway queries the recommendation pipeline to get online recommendation
 after getting the recommendations from the recommendation pipeline, 
 the API gateway orders the recommendations using the output of the ranking stage and using business rules, then returns the top recommendations to the customer.
 
-In the second endpoint, the API gateway queries the feature store to get the embeddings of the product and then executes an Approximate Nearest Neighbor (ANN) search to get similar products.
+In the second endpoint, the API gateway queries the feature store to get the embeddings of the product and then executes an ANN search to get similar products.
 
 \section{Storage Components}
 
@@ -72,14 +72,14 @@ There are four main storage components in the system:
     \begin{displayquote}
         The main database is an SQL database that stores the customers, products, and
          interactions data. In this project, a PostgreSQL \cite{Postgres} instance 
-         deployed using AWS RDS \footnote{Amazon Web Services Relational Database Service \cite{AwsRDS}}
+         deployed using AWS RDS \footnote{AWS Relational Database Service \cite{AwsRDS}}
          is used as the main database. 
          But in a bigger production environment, a distributed Data Warehouse such as 
          Amazon Redshift \cite{AwsRedshift} or Google BigQuery \cite{GoogleBigQuery} can be used.
     \end{displayquote}
     \item Online Feature Store
     \begin{displayquote}
-        The feature store is a storage system that stores data in a format optimized for machine learning models. \cite{NvidiaFeatureStores}
+        The feature store is a storage system that stores data in a format optimized for ML models. \cite{NvidiaFeatureStores}
         It also stores the embedding tables of the customers 
         and products, in addition to any other categorical features.
         This project uses FEAST \cite{feast} as the feature store, which supports using a Redis \cite{Redis} 
@@ -89,13 +89,13 @@ There are four main storage components in the system:
     \item Item Embedding Store
     \begin{displayquote}
         A vector database that stores the embeddings of the products
-         while allowing them to be queried using an Approximate Nearest Neighbor (ANN) search algorithm. 
+        while allowing them to be queried using an ANN search algorithm. 
         In this project, the item embedding store is a Redis \cite{Redis} cluster with the RediSearch \cite{RediSearch} module deployed using AWS ElastiCache \cite{AwsElastiCache}.
     \end{displayquote}
 
     \item Model Repository
     \begin{displayquote}
-        After training the models, their parameters are stored in the model repository. In this project, the model repository is an AWS Simple Storage Service (S3) bucket \cite{AwsS3}. 
+        After training the models, their parameters are stored in the model repository. In this project, the model repository is an AWS S3 bucket \cite{AwsS3}. 
     \end{displayquote}
     \item Results Store
     \begin{displayquote}
@@ -150,14 +150,14 @@ In production, the filtering workflow is deployed with the deep learning ranking
 
 This stage is the core of the recommendation pipeline, where the system ranks the candidate and filtered products and selects the top products to be recommended to the customer.
 
-To rank the model, a deep learning ranking model is trained using the historical data of the interactions between the customers and the products.
+To rank the products, a deep learning ranking model is trained using the historical data of the interactions between the customers and the products.
 Each categorical feature is replaced with its embedding and those embeddings are stored in the feature store during offline training. 
 After training the model, the model's parameters are stored in the model repository.
 
 The model's output is the ranking score of each product for each customer, which is the probability of the customer interacting with the product.
 
-The ranking model that was used in this project is the Deep Learning Recommendation Model (DLRM) \cite{facebook_dlrm} proposed by Facebook.
-
+The ranking model that was used in this project is the DLRM \cite{facebook_dlrm} proposed by Facebook.
+% TODO: fix this
 Instead of implementing the DLRM from scratch, 
 the system uses Merlin Models \cite{MerlinModels}
  implementation of the DLRM, 

@@ -3,7 +3,7 @@
 
 \section{Dataset}
 
-The dataset used in this experiment is called AliCPP and it is a public dataset that contains user-item interactions from an e-commerce platform. The dataset gather traffic logs of recommendation systems in Taobao, a Chinese online shopping website. The dataset is collected from the real-world recommendation system of Taobao.\cite{AliCPP}. The dataset contains of 4 types of features: user features, item features, combination features and context features, each feature is represented by an unique ID, and they described as follows:
+The dataset used in this experiment is called AliCCP and it is a public dataset that contains user-item interactions from an e-commerce platform. The dataset gathers traffic logs of recommendation systems in Taobao, a Chinese online shopping website. The dataset is collected from the real-world recommendation system of Taobao.\cite{AliCPP}. The dataset contains 4 types of features: user features, item features, combination features and context features, each feature is represented by a unique ID, and they are described as follows:
 
 \begin{table}[H]
     \centering
@@ -95,7 +95,7 @@ Figure \ref{fig:V100vsCPU} shows the performance comparison between the Tesla V1
 
 In addition to the hardware environment, the software environment is also important to be considered.
 Having access to \textbf{Nvidia Inception Program} \cite{NvidiaStartups}, 
-which includes access to NVIDIA AI Enterprise \cite{NvidiaAiEnterprise} with \textbf{Nvidia GPU Cloud (NGC) Catalog}\cite{NvidiaNGC}.
+which includes access to NVIDIA AI Enterprise \cite{NvidiaAiEnterprise} with NGC \cite{NvidiaNGC}.
 
 Instead of setting up the drivers, tools, libraries and frameworks manually, 
 the Nvidia AI Enterprise provides a pre-configured flavor of Linux Ubuntu that includes all necessities for deep learning tasks.
@@ -105,13 +105,13 @@ the Nvidia Merlin TensorFlow Container \cite{NvidiaMerlinTf} was used as a runti
 
 
 \section{Evaluation Results}
-solution is conducted using the AliCPP dataset with various models such as Multi-Layer Perceptron (MLP), Deep Learning Recommendation Model (DLRM), Deep \& Cross Network (DCN), Wide\&Deep, and the Two-Tower model. The evaluation metric used is Area Under the ROC Curve (AUC). Furthermore, we studied the impact of the number of epochs on the training and validation loss and Area Under the ROC Curve (AUC), using Binary Cross-Entropy (BCE) as a loss function.
+the solution is conducted using the AliCCP dataset with various models such as MLP, DLRM, DCN, Wide\&Deep, and the Two-Tower model. The evaluation metric used is the AUC. Furthermore, we studied the impact of the number of epochs on the training and validation loss and AUC, using BCE as a loss function.
 \subsection{AUC Comparison}
 
-The Area Under the Curve (AUC) metric describes a model's ability to separate positive and negative instances. A higher AUC indicates stronger distinction between the two classes. Where the AUC value ranges from 0 to 1, where 0.5 is the random guess and 1 is the perfect model.
+AUC metric describes a model's ability to separate positive and negative instances. A higher AUC indicates stronger distinction between the two classes. Where the AUC value ranges from 0 to 1, where 0.5 is the random guess and 1 is the perfect model.
 
-The AUC metric is used to evaluate the performance of the models on the AliCPP dataset. The results are shown in Figure \ref{fig:AUCComparison}.
-
+The results of the AUC comparison are shown in Figure \ref{fig:AUCComparison}. We use a synthetic dataset to compare the performance of the models. and to see if the setup working correctly.
+% TODO: Remove this
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.6\textwidth]{assets/models_comparasion.png}
@@ -126,6 +126,7 @@ Although an AUC score of 0.5 might seem underwhelming,
 considering it translates to a 50\% chance of the user clicking on a recommended item becomes more impressive. 
 Since systems typically show dozens of items, even a single click signifies the success of the system.
 
+
 \subsection{Training and Validation}
 
 To study the effect of the number of epochs on the training and validation loss and AUC, we trained the models using BCE as a loss function and plotted the AUC, BCE loss for both training and validation datasets over the number of epochs.
@@ -133,7 +134,7 @@ The results are shown in Figure \ref{fig:LossComparison} and Figure \ref{fig:AUC
 
 The results show that the training loss kept decreasing over the number of epochs, while the validation loss kept increasing, which indicates that the model is overfitting the training data.
 
-
+% TODO: Modify this
 \begin{figure}[H]
     \centering
     \begin{subfigure}{.5\textwidth}

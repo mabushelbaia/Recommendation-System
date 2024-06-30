@@ -24,6 +24,7 @@
 \usepackage{csquotes}
 \newtagform{fn}{(}{)\footnotemark}
 \usepackage{multirow}
+\usepackage{acronym}
 
 \usepackage[hyperfootnotes,hidelinks]{hyperref}
 \hypersetup{
@@ -86,13 +87,14 @@
 \setstretch{1}
 \dominitoc
 
-\include{chapters/abstract}
+\include{chapters/abstract/abstract}
 
 \cleardoublepage \phantomsection \addcontentsline{toc}{chapter}{Table of Contents} \mtcaddchapter \tableofcontents
 
 \cleardoublepage \phantomsection \addcontentsline{toc}{chapter}{List of Tables} \mtcaddchapter \listoftables
 
 \cleardoublepage \phantomsection \addcontentsline{toc}{chapter}{List of Figures} \mtcaddchapter \listoffigures
+\cleardoublepage \phantomsection \addcontentsline{toc}{chapter}{List of Abbreviations} \mtcaddchapter \input{chapters/abbreviations.tex}
 
 \cleardoublepage
 
@@ -101,20 +103,22 @@
 
 \pagenumbering{arabic}
 
-\include{chapters/introduction_and_motivation}
+\include{chapters/introduction_and_motivation/introduction_and_motivation}
 
 \input{chapters/background/background}
 \input{chapters/background/dlrm_recsys}
 \input{chapters/background/stages}
+\input{Chapters/background/Softmax}
 
 \input{chapters/literature_review/literature_review}
 \input{chapters/literature_review/related_work}
 
-\include{chapters/solution}
+\input{chapters/solution/solution}
+\input{chapters/solution/training_pipline}
 
-\include{chapters/results}
+\include{chapters/results/results}
 
-\include{chapters/conclusion}
+\include{chapters/conclusion/conclusion}
 
 \cleardoublepage \phantomsection \addcontentsline{toc}{chapter}{Bibliography} \mtcaddchapter
 \bibliographystyle{ieeetr.bst}
