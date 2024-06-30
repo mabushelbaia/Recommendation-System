@@ -125,29 +125,3 @@ Recommending relevant items from millions of possibilities is a significant chal
 Although an AUC score of 0.5 might seem underwhelming, 
 considering it translates to a 50\% chance of the user clicking on a recommended item becomes more impressive. 
 Since systems typically show dozens of items, even a single click signifies the success of the system.
-
-
-\subsection{Training and Validation}
-
-To study the effect of the number of epochs on the training and validation loss and AUC, we trained the models using BCE as a loss function and plotted the AUC, BCE loss for both training and validation datasets over the number of epochs.
-The results are shown in Figure \ref{fig:LossComparison} and Figure \ref{fig:AUCOverEpochs}.
-
-The results show that the training loss kept decreasing over the number of epochs, while the validation loss kept increasing, which indicates that the model is overfitting the training data.
-
-% TODO: Modify this
-\begin{figure}[H]
-    \centering
-    \begin{subfigure}{.5\textwidth}
-        \centering
-        \includegraphics[width=0.95\linewidth]{assets/loss_epochs_20.png}
-        \caption[Loss Comparison]{Loss Comparison}
-        \label{fig:LossComparison}
-    \end{subfigure}%
-    \begin{subfigure}{.5\textwidth}
-        \centering
-        \includegraphics[width=0.95\linewidth]{assets/auc_epochs_20.png}
-        \caption[AUC Over Epochs]{AUC Over Epochs}
-        \label{fig:AUCOverEpochs}
-    \end{subfigure}
-    \caption[Measures Over Epoches]{Measures Over Epoches}
-\end{figure}
