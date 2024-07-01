@@ -14,7 +14,7 @@ Then in the online phase ( serving the recommendations ), an ANN search to retri
 \subsubsection{Two-Tower Model}
 
 Another popular approach to retrieval is using a two-tower model, 
-The concept for this model design is rather straightforward; as the diagram in Figure \ref{fig:TwoTowerModel} illustrates, it consists of two completely independent towers, 
+The concept for this model design is rather straightforward; as the diagram in Figure \ref{fig: TwoTowerModel} illustrates, it consists of two completely independent towers, 
 one for the user and one for the item. 
 The model can learn high-level abstract representations for a user and an item 
 based on previous user-item interactions thanks to DNN. 
@@ -23,7 +23,7 @@ based on previous user-item interactions thanks to DNN.
     \centering
     \includegraphics[width=0.9\textwidth]{assets/two_tower.png}
     \caption[Two-Tower Neural Retrieval Model for YouTube]{Two-Tower Neural Retrieval Model for YouTube \cite{YoutubeTwoTower}}
-    \label{fig:TwoTowerModel}
+    \label{fig: TwoTowerModel}
 \end{figure}
 
 The output of the two-tower model is a vector representing the similarity between item embedding and user embedding, 
@@ -43,7 +43,7 @@ One popular approach to retrieval uses embedding models.
 These models create a dense vector space where users and items are represented as points.
 ANN search,
 which identifies items closest to the user's representation in the space, 
-indicating potential relevance and making them strong candidates for recommendation. figure \ref{fig:AnnVoronoi} illustrates the concept of ANN search.
+indicating potential relevance and making them strong candidates for recommendation. figure \ref{fig:AnnVoronoi} illustrates the concept of ANN search. % TODO figure description is wrong FIXME
 
 
 \begin{figure}[H]

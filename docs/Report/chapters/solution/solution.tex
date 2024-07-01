@@ -131,7 +131,8 @@ The training of the two-tower model is done using a distributed training framewo
 
 During inference (online), using two separate towers to retrieve the candidate items for each customer is not efficient. \cite{NvidiaFeatureStores}
 To reduce the latency of the responses, the system uses only the customer tower to generate the embeddings of the customers,
-after that, an ANN search algorithm is used to retrieve the candidate products from the item embedding store.
+after that, an ANN search algorithm is used to retrieve the candidate products from the item embedding store by doing an ANN search using the customer embedding, 
+in other words, calculates the similarity between the customer embedding and item embeddings then retrieving the top hundred or so nearest items.
 
 In production, the user tower is deployed using Nvidia Triton Inference Server \cite{Triton} on 
 AWS SageMaker \cite{AwsSageMaker} inside a Merlin Inference container \cite{NvidiaMerlinInference} from Nvidia's NGC \cite{NvidiaNGC}.

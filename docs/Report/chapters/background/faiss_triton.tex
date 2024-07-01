@@ -2,5 +2,10 @@
 Faiss is a powerful library designed for efficient similarity search and clustering of dense vectors. It provides algorithms that can search through sets of vectors of any size, even those that may not fit in memory. Additionally, Faiss includes supporting code for evaluation and parameter tuning. The library is implemented in C++ and comes with complete wrappers for Python and \texttt{numpy}. Faiss is developed and maintained by Facebook AI Research \cite{Faiss}.
 
 \section{Triton Inference Server}
-The Triton Inference Server is an open-source model serving software that simplifies the deployment of AI models at scale in production environments. It is designed to support model parallelism, which allows the server to scale to multiple GPUs and multiple models. Triton supports TensorFlow, PyTorch, ONNX, and TensorRT models. It also provides a RESTful API and gRPC endpoints for model inference. Triton is developed and maintained by NVIDIA \cite{TritonInferenceServer}.
+The Triton Inference Server is an open-source model-serving software that simplifies the deployment of AI models at scale in production environments. It is designed to support model parallelism, which allows the server to scale to multiple GPUs and multiple models. Triton supports TensorFlow, PyTorch, ONNX, and TensorRT models. It also provides a RESTful API and gRPC endpoints for model inference. Triton is developed and maintained by NVIDIA \cite{TritonInferenceServer}.
 
+\section{Apache Parquet}
+Parquet is an open-source binary columnar storage file format that is more efficient than CSV for reading and writing data. It supports complex data structures and is designed to work with big data systems like Apache Hadoop.
+Parquet represents nested structures using the record shredding and assembly technique from the Dremel \cite{Dremel} paper.
+Parquet is designed to be efficient for both read and write operations. 
+Parquet is developed and maintained by the Apache Software Foundation \cite{ApacheParquet}. 
