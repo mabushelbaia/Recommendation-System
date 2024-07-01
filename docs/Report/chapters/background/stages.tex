@@ -29,13 +29,6 @@ based on previous user-item interactions thanks to DNN.
 The output of the two-tower model is a vector representing the similarity between item embedding and user embedding, 
 it indicates the user's level of interest in the specified item.
 
-Similarity can be either Cosine Similarity, or Euclidean Distance, but cosine is more popular in recommendation systems because it is less sensitive to the magnitude of the vectors, as shown in equation \ref{eq:cosine_similarity}.
-
-\begin{equation}
-    \text{Cosine Similarity} = \frac{A \cdot B}{\|A\| \|B\|}
-    \label{eq:cosine_similarity}
-\end{equation}
-
 
 \subsubsection{Approximate Nearest Neighbor}
 
@@ -43,15 +36,15 @@ One popular approach to retrieval uses embedding models.
 These models create a dense vector space where users and items are represented as points.
 ANN search,
 which identifies items closest to the user's representation in the space, 
-indicating potential relevance and making them strong candidates for recommendation. figure \ref{fig:AnnVoronoi} illustrates the concept of ANN search. % TODO figure description is wrong FIXME
-
+indicating potential relevance and making them strong candidates for recommendation. figure \ref{fig:Ann} illustrates the concept of ANN search
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.35\textwidth]{assets/ann.png}
-    \caption[ANN Voronoi Diagram]{ANN Voronoi Diagram \cite{AnnVoronoi}}
-    \label{fig:AnnVoronoi}
+    \includegraphics[width=0.9\textwidth]{assets/Approximate Nearest Neighbor.jpg}
+    \caption[Approximate Nearest Neighbor]{Approximate Nearest Neighbor}
+    \label{fig:Ann}
 \end{figure}
+
 
 
 \subsection{Filtering Stage}
