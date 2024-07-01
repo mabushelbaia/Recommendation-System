@@ -90,7 +90,7 @@ There are four main storage components in the system:
     \begin{displayquote}
         A vector database that stores the embeddings of the products
         while allowing them to be queried using an ANN search algorithm. 
-        In this project, the item embedding store is a Redis \cite{Redis} cluster with the RediSearch \cite{RediSearch} module deployed using AWS ElastiCache \cite{AwsElastiCache}.
+        In this project, the item embedding store is a Faiss Index\cite{Faiss} that is stored in an S3 bucket and is materialized, loaded in memory, on inference server startup.
     \end{displayquote}
 
     \item Model Repository
@@ -100,7 +100,7 @@ There are four main storage components in the system:
     \item Results Store
     \begin{displayquote}
        To implement offline batch recommendations, the results of running the recommendation pipeline periodically for all users are stored in the results store. 
-       In this project, the results store is a Redis cluster deployed using AWS ElastiCache \cite{AwsElastiCache}.
+       In this project, the results store is a Redis\cite{Redis} cluster deployed using AWS ElastiCache \cite{AwsElastiCache}.
     \end{displayquote}
 \end{itemize}
 

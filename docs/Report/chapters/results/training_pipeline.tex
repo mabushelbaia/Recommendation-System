@@ -58,13 +58,13 @@ The model is trained using the following hyperparameters:
 
 \begin{itemize}
 \item Batch Size: 28K
-\item Number of Epochs: 20
+\item Number of Epochs: 30
 \item Optimizer: Adam
 \item Loss Function: Categorical Crossentropy
-\item Model: Two Tower 
+\item Model: Two Tower (v2 Implementation By Merlin Models)
 \end{itemize}
 
-Figure \ref{fig:RetrievalModelTraining} shows the training loss and recall of the retrieval model.
+Figure \ref{fig: RetrievalModelTraining} shows the training loss and recall of the retrieval model.
 It shows that the model achieves a recall at 20 of around 30\% on the training data, but on the validation data, the recall is around 4\% only.
 
 This means that in the top 20 recommendations, 4\% of the actual positive items in the validation set are listed.
@@ -75,26 +75,27 @@ Unfortunately, due to technical limitations, the recall at 500 could not be calc
 
 \begin{figure}[H]
     \centering
-    \begin{subfigure}{.5\textwidth}
+    \begin{subfigure}{.8\textwidth}
         \centering
-        \includegraphics[width=0.95\linewidth]{assets/training_loss.png}
-        \caption[Retrieval Model Loss]{Retrieval Model Loss}
+        \includegraphics[width=\textwidth]{assets/retrieval_trianing_loss.png}
+        \caption[Retrieval Model Loss]{Retrieval Model Loss Vs Epochs}
         \label{fig:RetrievalModelLoss}
-    \end{subfigure}%
-    \begin{subfigure}{.5\textwidth}
+    \end{subfigure}
+    \bigskip
+    \begin{subfigure}{.8\textwidth}
         \centering
-        \includegraphics[width=0.95\linewidth]{assets/recall_epochs.png}
-        \caption[Retrieval Model Recall]{Retrieval Model Recall At 20}
+        \includegraphics[width=\textwidth]{assets/retrieval_trianing_recall.png}
+        \caption[Retrieval Model Recall]{Retrieval Model Recall At 20 Vs Epochs}
         \label{fig:RetrievalModelRecall}
     \end{subfigure}
     \caption[Retrieval Model Training]{Retrieval Model Training Results}
-    \label{fig:RetrievalModelTraining}
+    \label{fig: RetrievalModelTraining}
 \end{figure}
 
 \subsubsection{Saving Query Tower}
 
 Once the retrieval model is trained, the query tower is saved as a Keras model to the model repository, 
-in this project, it should be an S3 bucket, but for the simplicity of this experiment, it is saved locally to a GP3 SSD attached to the server.
+in this project, it should be an S3 bucket, but for the simplicity of this experiment, it is saved locally to an EBS GP3 SSD attached to the server.
 This model will be used to generate the user embeddings at inference time.
 
 \subsubsection{Saving Item Embeddings}
@@ -111,11 +112,32 @@ In this experiment, the index is saved to the model repository and later loaded 
 A DLRM model is trained using the following hyperparameters:
 
 \begin{itemize}
-\item Batch Size: 204800
+\item Batch Size: 204K
 \item Number of Epochs: 2
 \item Optimizer: Adam
+\item Binary Crossentropy Loss
+\item Model: DLRM
 \end{itemize}
 
-TODO graphs and overfitting !!
+Figure \ref{fig: RankingModelTraining} shows the training and validation area under curve of the ranking model vs epochs. It shows that the model starts overfitting after the second epoch, as the training AUC keeps increasing while the validation AUC decreases.
+This is why the model was early stopped at two epochs.
 
-Once the model is trained, the model is saved as a Keras model to the model repository.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{assets/ranking_training_validation_auc.png}
+    \caption{Ranking Model Training/Validation Set AUC}
+    \label{fig: RankingModelTraining}
+\end{figure}
+
+Different models were trained and tested, such as the DCN and NCF, but the DLRM model was chosen as it had slightly better performance and higher metrics.
+Figure \ref{fig: RankingModelsResults} shows the metrics of the different models tested.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{assets/Validation Metrics Comparison.png}
+    \caption{Ranking Models Comparison}
+    \label{fig: RankingModelsResults}
+\end{figure}
+
+
+Once the model finished training, it was saved as a TensorFlow model to the model repository.
