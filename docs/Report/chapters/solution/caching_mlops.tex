@@ -1,0 +1,18 @@
+
+\section{Storing Results}
+
+To enhance the performance of the recommendation system, the results of online recommendations are stored in an in-memory caching layer.
+In addition to that, the results of running the recommendation pipeline periodically for all users are stored in the results store.
+
+This is done to provide the recommendations with ultra-low latency and to provide the recommendations in case of a failure in the recommendation pipeline or overload.
+
+\section{Automation And MlOps}
+
+To keep the recommendation system running and to keep the models up to date, a lot of automation and DevOps work is required.
+The main task that needs to be automated is the periodic training of the models and the deployment of the models and the workflows.
+
+To run periodic tasks a cloud-native service similar to cron jobs is required, in this project, AWS Batch~\cite{AwsBatch} was used.
+AWS Batch allows running computing workloads on the cloud, in an automated and scalable way.
+
+The job should respawn the training environment and run the training workflow, then store the model's parameters and the workflow in the model repository, in addition to storing the embeddings in the feature store.
+

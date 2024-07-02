@@ -6,7 +6,7 @@ To build a recommendation system based on a deep learning ranking model, there a
 
 Any system is a group of components that work together to achieve a goal according to a set of rules. The recommendation system is no different, it is a group of components that work together to provide personalized suggestions to users. There are two recommendation system types based on the number of stages they have:
 \subsection{Two-stage Recommender Systems}
-Two-stage recommender systems are systems that have two main stages as shown in figure \ref{fig:TwoStageRecSys}: candidate generation and ranking. The candidate generation stage is responsible for generating a set of candidate items for each user, while the ranking stage is responsible for ranking the candidate items and selecting the top items to be recommended to the user. The candidate generation stage is usually based on collaborative filtering or content-based filtering, while the ranking stage is usually based on ML models such as matrix factorization or deep learning models \cite{MultiStageRecSys}.
+Two-stage recommender systems are systems that have two main stages as shown in figure \ref{fig:TwoStageRecSys}: candidate generation and ranking. The candidate generation stage is responsible for generating a set of candidate items for each user, while the ranking stage is responsible for ranking the candidate items and selecting the top items to be recommended to the user. The candidate generation stage is usually based on collaborative filtering or content-based filtering, while the ranking stage is usually based on ML models such as matrix factorization or deep learning models~\cite{MultiStageRecSys}.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.6\textwidth]{assets/Two_stage_rec_sys.jpg}
@@ -20,7 +20,7 @@ the filtering stage is responsible for filtering the candidate items according t
 and the ordering stage is responsible for ordering the scored items and selecting the top items to be recommended to the user. 
 The retrieval stage is usually based on collaborative filtering or content-based filtering, while the filtering stage is 
 usually based on ML models such as matrix factorization or deep learning models, and the scoring and ordering 
-stages are usually based on ML models such as deep learning models \cite{NvidiaRecSysBestPractices}.
+stages are usually based on ML models such as deep learning models~\cite{NvidiaRecSysBestPractices}.
 \begin{figure}[H]
     \centering
     \includegraphics[width=1\textwidth]{assets/Four_stage_rec_sys.png}
@@ -32,9 +32,9 @@ each stage utilizes a set of components and algorithms in training and inference
 One of the main challenges in building a recommendation system is dealing with high cardinality categorical features, which are features that have a large number of unique values. The high cardinality of categorical features makes it difficult to use traditional ML models such as linear regression and decision trees, as these models require the categorical features to be one-hot encoded, which results in a large number of features and a large model size. 
 To deal with high cardinality categorical features, the DLRM uses several techniques such as:
 \subsubsection{Features embedding}
-Feature embedding is a technique used to represent categorical features as dense vectors of real numbers, where each unique value of the categorical feature is represented by a unique vector. The feature embedding technique is used to reduce the dimensionality of the categorical features and to learn the relationships between the unique values of the categorical features \cite{FeatureEmbedding}.
+Feature embedding is a technique used to represent categorical features as dense vectors of real numbers, where each unique value of the categorical feature is represented by a unique vector. The feature embedding technique is used to reduce the dimensionality of the categorical features and to learn the relationships between the unique values of the categorical features~\cite{FeatureEmbedding}.
 \subsubsection{Targaet encoding}
-The target encoding technique is employed to encode categorical features with high cardinality by using the mean of the target variable for each unique value of the categorical feature. This technique helps reduce the dimensionality of the categorical features while encoding them based on their relationship with the target variable \cite{TargetEncoding}.
+The target encoding technique is employed to encode categorical features with high cardinality by using the mean of the target variable for each unique value of the categorical feature. This technique helps reduce the dimensionality of the categorical features while encoding them based on their relationship with the target variable~\cite{TargetEncoding}.
 \subsection{Training (Offline)}
 Like any ML system, the process of training the models occurs offline,
 where the system is trained on a set of historical data, aka batched data, to optimize the model's parameters.
@@ -55,7 +55,7 @@ Figure \ref{fig:TwoStageOnline} shows a pipeline suggested by Nvidia\cite{Nvidia
 \begin{figure}[H]
     \centering
     \includegraphics[width=1\textwidth]{assets/online-two-stage-recommender-pipeline.png}
-    \caption[Two Stage Online Recommendation System]{Two Stage Online Recommendation System \cite{NvidiaFeatureStores}}
+    \caption[Two Stage Online Recommendation System]{Two Stage Online Recommendation System~\cite{NvidiaFeatureStores}}
     \label{fig:TwoStageOnline}
 \end{figure}
 
@@ -74,6 +74,6 @@ Online and batched inference can be used together to provide real-time recommend
 \begin{figure}[H]
     \centering
     \includegraphics[width=1\textwidth]{assets/batch-recommendation-system.png}
-    \caption[Batch Recommendation System]{Batch Recommendation System \cite{NvidiaFeatureStores}}
+    \caption[Batch Recommendation System]{Batch Recommendation System~\cite{NvidiaFeatureStores}}
     \label{fig:BatchRecSys}
 \end{figure}

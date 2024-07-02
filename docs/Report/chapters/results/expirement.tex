@@ -73,7 +73,7 @@ In order to evaluate the performance of the proposed solution with real-world da
 
 \subsection{Hardware Environment}
 
-To achieve this, the experiment is conducted on a cloud-based environment, specifically on an AWS EC2 p3.2xlarge instance \cite{AwsEc2P3}.
+To achieve this, the experiment is conducted on a cloud-based environment, specifically on an AWS EC2 p3.2xlarge instance~\cite{AwsEc2P3}.
 
 The instance is equipped with 8 vCPUs, 61 GiB of memory, and a single NVIDIA Tesla V100 GPU.
 
@@ -87,19 +87,19 @@ Figure \ref{fig:V100vsCPU} shows the performance comparison between the Tesla V1
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{assets/v100-vs-cpu.png}
-    \caption[Tesla V100 vs CPU]{Tesla V100 vs CPU \cite{NvidiaV100DataSheet}}
+    \caption[Tesla V100 vs CPU]{Tesla V100 vs CPU~\cite{NvidiaV100DataSheet}}
     \label{fig:V100vsCPU}
 \end{figure}
 
 \subsection{Software Environment}
 
 In addition to the hardware environment, the software environment is also important to be considered.
-Having access to \textbf{Nvidia Inception Program} \cite{NvidiaStartups}, 
-which includes access to NVIDIA AI Enterprise \cite{NvidiaAiEnterprise} with NGC \cite{NvidiaNGC}.
+Having access to \textbf{Nvidia Inception Program}~\cite{NvidiaStartups}, 
+which includes access to NVIDIA AI Enterprise~\cite{NvidiaAiEnterprise} with NGC~\cite{NvidiaNGC}.
 
 Instead of setting up the drivers, tools, libraries and frameworks manually, 
 the Nvidia AI Enterprise provides a pre-configured flavor of Linux Ubuntu that includes all necessities for deep learning tasks.
 
 In addition to that, instead of compiling the Merlin TensorFlow from the source code, 
-the Nvidia Merlin TensorFlow Container \cite{NvidiaMerlinTf} was used as a runtime for the experiment Jupyter notebook.
+the Nvidia Merlin TensorFlow Container~\cite{NvidiaMerlinTf} was used as a runtime for the experiment Jupyter notebook.
 

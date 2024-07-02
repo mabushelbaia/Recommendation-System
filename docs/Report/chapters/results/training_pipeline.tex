@@ -4,7 +4,7 @@
 
 \subsubsection{Converting the Data from CSV to Parquet}
 
-The raw AliCCP dataset is stored in CSV format. However, to leverage GPU-accelerated libraries such as cuDF, the data is converted into the Apache Parquet \cite{ApacheParquet}.
+The raw AliCCP dataset is stored in CSV format. However, to leverage GPU-accelerated libraries such as cuDF, the data is converted into the Apache Parquet~\cite{ApacheParquet}.
 
 
 The original data in CSV format was about 11GB in size. After converting it to Parquet format, the data size was reduced to 1.1GB.
@@ -98,13 +98,13 @@ Once the retrieval model is trained, the query tower is saved as a Keras model t
 in this project, it should be an S3 bucket, but for the simplicity of this experiment, it is saved locally to an EBS GP3 SSD attached to the server.
 This model will be used to generate the user embeddings at inference time.
 
-\subsubsection{Saving Item Embeddings}
+\subsubsection{Generating Item Embeddings}
 
 the embeddings of each item in the dataset are calculated at training time using the trained retrieval model. 
-Then those embeddings are saved in a parquet \cite{ApacheParquet} file which will next be converted to a Faiss \cite{Faiss} index for fast retrieval at inference time.
+Then those embeddings are saved in a parquet~\cite{ApacheParquet} file which will next be converted to a Faiss~\cite{Faiss} index for fast retrieval at inference time.
 
 Once the retrieval model finishes generating the item embedding parquet,
-the parquet is used to generate a Faiss \cite{Faiss} index.
+the parquet is used to generate a Faiss~\cite{Faiss} index.
 In this experiment, the index is saved to the model repository and later loaded to GPU memory on inference server start up.
 
 \subsection{Ranking Model Training}
