@@ -12,7 +12,9 @@ The training data consists of 42,299,771 rows, while the testing data consists o
 
 \subsubsection{Eliminating Rows with Excessive Missing Data}
 
+Null values can introduce biases or inaccuracies into the analysis, so removing rows with many missing data points helps to mitigate this issue.
 Rows with more than five null features were removed to ensure data completeness.
+The five nulls threshold ensures that the remaining rows have enough complete information to be useful for training and testing the recommender system.
 This resulted in a training dataset with 33,088,764 rows and a testing dataset with 33,678,677 rows.
 
 \subsubsection{Resplitting Data}
@@ -75,14 +77,14 @@ Unfortunately, due to technical limitations, the recall at 500 could not be calc
 
 \begin{figure}[H]
     \centering
-    \begin{subfigure}{.8\textwidth}
+    \begin{subfigure}{\textwidth}
         \centering
         \includegraphics[width=\textwidth]{assets/retrieval_trianing_loss.png}
         \caption[Retrieval Model Loss]{Retrieval Model Loss Vs Epochs}
         \label{fig:RetrievalModelLoss}
     \end{subfigure}
     \bigskip
-    \begin{subfigure}{.8\textwidth}
+    \begin{subfigure}{\textwidth}
         \centering
         \includegraphics[width=\textwidth]{assets/retrieval_trianing_recall.png}
         \caption[Retrieval Model Recall]{Retrieval Model Recall At 20 Vs Epochs}
@@ -106,6 +108,12 @@ Then those embeddings are saved in a parquet~\cite{ApacheParquet} file which wil
 Once the retrieval model finishes generating the item embedding parquet,
 the parquet is used to generate a Faiss~\cite{Faiss} index.
 In this experiment, the index is saved to the model repository and later loaded to GPU memory on inference server start up.
+
+\subsection{Filtering}
+In a four-stage recommender system, the filtering stage typically follows retrieval.
+During filtering, products are removed based on business rules, such as stock or age restrictions. 
+
+However, the AliCCP dataset does not include this type of information, so the filtering step was skipped in this experiment.
 
 \subsection{Ranking Model Training}
 
@@ -135,7 +143,7 @@ Figure \ref{fig: RankingModelsResults} shows the metrics of the different models
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{assets/Validation Metrics Comparison.png}
-    \caption{Ranking Models Comparison}
+    \caption{Ranking Models Validation Metrics Comparison}
     \label{fig: RankingModelsResults}
 \end{figure}
 

@@ -2,13 +2,19 @@
 \minitoc
 
 \section{Conclusion}
-In conclusion, the development and deployment of a cutting-edge accelerated e-commerce deep learning recommendation system present both challenges and opportunities. Through the exploration of various recommendation system types, it is evident that DLRMs offer promising potential in terms of scalability and performance.
- However, the evaluation of the AliCCP dataset suggests that while these models perform similarly in terms of AUC metric, they still face the challenge of effectively recommending relevant items from vast databases of millions of products.
 
-Moving forward, the focus lies on the efficient deployment and automation of the recommendation pipeline, including data injection, training, and serving recommendations through a simple RESTful API interface.
- Optimization of ranking and retrieval models remains paramount to enhance the system's accuracy and both business and customer satisfaction.
+In conclusion, 
+the development and deployment of a cutting-edge accelerated e-commerce deep learning recommendation system present both challenges and opportunities. 
+Through the exploration of various recommendation system types, it is evident that DLRMs offer promising potential in terms of scalability and performance.
+However, evaluation of the retrieval component reveals that the current Two-Tower model requires further optimization or replacement to enhance the selection of relevant items from vast product databases.
+ Additionally, the system's latency increases with the number of items retrieved, indicating a need for improvements in the feature retrieval process.
 
-\section{Future Work (TO REVISIT)}
+ Moving forward, research will prioritize optimizing the retrieval stage, focusing on improving accuracy (especially recall) and reducing latency.
+  A more effective retrieval model helps significantly in enhancing the user experience by presenting more relevant product recommendations, 
+  leading to increased customer engagement and potentially higher sales. Furthermore, by addressing latency issues, the system can better handle real-time recommendation requests, ensuring a seamless browsing experience for e-commerce users. 
+ Such optimizations have the potential to not only improve the performance of the systems but also contribute to advancements in the field of e-commerce personalization.
+
+\section{Future Technical Work}
 Build and implement the system's components, deploy and automate the recommendation pipeline and required infrastructure 
 In addition to optimizing the ranking and retrieval models
 There are many possible improvements and future work that can be done to the system, 
@@ -55,3 +61,11 @@ Such a model can utilize RNN with LSTM to capture the user's session and context
 One possible library to use for this purpose is Merlin Transformer4Rec~\cite{NvidiaMerlinTransformers4Rec}, 
 which is a flexible and efficient library for sequential and session-based recommendation~\cite{NvidiaMerlinTransformers4Rec}.
 
+
+\section{Economic Implications and Potential for Revenue Generation}
+
+This cutting-edge recommendation system, once optimized, holds immense potential to transform e-commerce businesses. By significantly improving the accuracy and relevance of product recommendations, it can drive increased customer engagement, higher click-through rates, and ultimately, increased sales. This translates to a direct boost in revenue for e-commerce platforms. Additionally, the ability to provide real-time personalized recommendations can enhance the user experience, leading to improved customer satisfaction and loyalty, further contributing to long-term revenue growth. 
+
+The system can also be licensed or sold to other e-commerce businesses, generating additional revenue streams. 
+One potential model for revenue generation could involve taking a percentage of sales resulting from clicks on recommended items, providing a direct incentive to optimize the system's performance.
+ In essence, this project not only addresses a significant technological challenge but also opens doors to substantial economic opportunities in the world of online retail.
