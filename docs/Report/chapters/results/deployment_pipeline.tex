@@ -1,6 +1,6 @@
 \section{Deployment}
 
-The deployment pipeline of the recommendation system involves setting up the Triton Ensemble and the external components of the system as shown in Figure \ref{fig:DeploymentDiagram}.
+The deployment pipeline of the recommendation system involves setting up the Triton Ensemble and the external components of the system as shown in Figure \ref{fig: DeploymentDiagram}.
 To use a Triton inference server, a Triton Ensemble has to be compiled with the necessary models, workflows, and configurations.
 
 \subsection{Feast Materialization}
@@ -11,7 +11,7 @@ meaning that they have to be moved from Feast's offline store, which in this cas
 \subsection{Compiling Ensemble}
 
 After the user and item features are materialized, the Triton Ensemble is compiled with all the models, workflows, and configurations.
-Once compiled with all the components shown in Figure \ref{fig:DeploymentDiagram}, it outputs a directory tree similar to the one shown in Figure \ref{fig: EnsembleDirectoryTree}.
+Once compiled with all the components shown in Figure \ref{fig: DeploymentDiagram}, it outputs a directory tree similar to the one shown in Figure \ref{fig: EnsembleDirectoryTree}.
 
 \begin{figure}[H]
     \centering
@@ -51,7 +51,7 @@ Once compiled with all the components shown in Figure \ref{fig:DeploymentDiagram
 \end{figure}
 
 
-As shown in Figure~\ref{fig: EnsembleDirectoryTree}, the Triton Ensemble directory tree contains model configurations, model weights, embeddings categories, and other necessary files.
+As shown in Figure~\ref{fig: EnsembleDirectoryTree}, the Triton Ensemble directory tree contains model configurations, model weights, embedding categories, and other necessary files.
 Those files are saved to the model repository.
 
 \section{Demo}
@@ -64,9 +64,9 @@ A demo web UI was created to demonstrate the recommender system's functionality 
 To calculate metrics within the demo, a small subset of users with their positive clicks from the validation data was utilized.
 
 The demo is a straightforward web application built using HTML, FastAPI~\cite{FastAPI}, and Tailwind CSS.
-Figure~\ref{fig: Demo1} and Figure~\ref{fig: Demo2} show an illustrative example that represnts a sample input and output of the recommendation system.
+Figure~\ref{fig: Demo1} and Figure~\ref{fig: Demo2} show an illustrative example that represents a sample input and output of the recommendation system.
 
-Figure \ref{fig: Demo1} llustrates the recommendations generated for a specific user (ID \#12001) who has interacted with 306 items, representing the positive instances in the validation set.
+Figure \ref{fig: Demo1} illustrates the recommendations generated for a specific user (ID \#12001) who has interacted with 306 items, representing the positive instances in the validation set.
 
 
 \begin{figure}[H]
@@ -96,20 +96,20 @@ The retrieval model retrieved 200 items, of which 7 were true positives, resulti
 \section{Performance Evaluation}
 
 To evaluate the performance of the recommendation system, a simple benchmark was conducted using the Triton Inference Client,
- 100 request were sent to the server, and the average latency was calculated using different values for retrieval TopK items limit.
+ 100 requests were sent to the server, and the average latency was calculated using different values for retrieval TopK items limit.
 
-Figure \ref{fig:PerformanceEvaluation} shows the average latency of the system with different values for the TopK items limit.
+Figure \ref{fig: PerformanceEvaluation} shows the average latency of the system with different values for the TopK items limit.
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{assets/performance_benchmark.png}
     \caption{Performance Evaluation}
-    \label{fig:PerformanceEvaluation}
+    \label{fig: PerformanceEvaluation}
 \end{figure}
 
-As shown in Figure \ref{fig:PerformanceEvaluation}, the average latency of the system increases as the TopK items limit increases, this is because the bottle neck of the system is loading item features from the feature store, the more items are loaded the more time it takes to retrieve them.
-Meanwhile the time required to evaluate 100 or 1000 item in the recommendation model is negligible compared to the time required to load the item features.
+As shown in Figure \ref{fig: PerformanceEvaluation}, the average latency of the system increases as the TopK items limit increases, this is because the bottleneck of the system is loading item features from the feature store, the more items are loaded the more time it takes to retrieve them.
+Meanwhile, the time required to evaluate 100 or 1000 items in the recommendation model is negligible compared to the time required to load the item features.
 
-An approach to improve the performance of the system is to use a more efficient feature store, probably use a better offline store for Feast instead of Parquet files that are used in this experiment.
+An approach to improve the performance of the system is to use a more efficient feature store, probably a better offline store for Feast instead of the Parquet files that are used in this experiment.
 
 

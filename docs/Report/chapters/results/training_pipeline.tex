@@ -107,7 +107,7 @@ Then those embeddings are saved in a parquet~\cite{ApacheParquet} file which wil
 
 Once the retrieval model finishes generating the item embedding parquet,
 the parquet is used to generate a Faiss~\cite{Faiss} index.
-In this experiment, the index is saved to the model repository and later loaded to GPU memory on inference server start up.
+In this experiment, the index is saved to the model repository and later loaded to GPU memory on inference server start-up.
 
 \subsection{Filtering}
 In a four-stage recommender system, the filtering stage typically follows retrieval.
@@ -127,7 +127,7 @@ A DLRM model is trained using the following hyperparameters:
 \item Model: DLRM
 \end{itemize}
 
-Figure \ref{fig: RankingModelTraining} shows the training and validation area under curve of the ranking model vs epochs. It shows that the model starts overfitting after the second epoch, as the training AUC keeps increasing while the validation AUC decreases.
+Figure \ref{fig: RankingModelTraining} shows the training and validation area under the curve of the ranking model vs epochs. It shows that the model starts overfitting after the second epoch, as the training AUC keeps increasing while the validation AUC decreases.
 This is why the model was early stopped at two epochs.
 
 \begin{figure}[H]

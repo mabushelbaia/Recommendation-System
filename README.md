@@ -6,7 +6,7 @@
 
 ## Final Report
 
-🔗 | [Final Report (Draft)](docs/Report/incomplete_draft_of_final_report.pdf)
+🔗 | [Final Report (Draft)](docs/Report/final_report_draft.pdf)
 
 ## Code Repository
 
@@ -26,4 +26,4 @@
 - [x] Summarize results in conclusion
 - [x] Business side in future work !
 - [x] Add sub sections in Future work, one for business side and one for technical side
-- [ ] Performance benchmarking
+- [x] Performance benchmarking

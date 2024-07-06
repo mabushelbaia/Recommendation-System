@@ -63,13 +63,13 @@ the system uses Merlin Models~\cite{MerlinModels}
 This section describes the inference ensemble, which is responsible for generating recommendations for a given user in real-time.
 The next section describes a different ensemble that generates similar products to a given product.
 
-The deployment of the recommendation system in inference mode involves setting up the Triton Ensemble and the external components of the system as shown below in Figure \ref{fig:DeploymentDiagram}.
+The deployment of the recommendation system in inference mode involves setting up the Triton Ensemble and the external components of the system as shown below in Figure \ref{fig: DeploymentDiagram}.
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{assets/deployment.jpg}
     \caption{Inference Ensemble Diagram}
-    \label{fig:DeploymentDiagram}
+    \label{fig: DeploymentDiagram}
 \end{figure}
 
 Initially, the ensemble receives a user ID as input. Once received, Triton starts executing the ensemble pipeline step by step, which consists of the following steps:
@@ -91,7 +91,7 @@ During inference (online), using two separate towers to retrieve the candidate i
 
 To reduce the latency of the responses, the system uses only the customer tower to generate the embeddings of the customers,
 after that, an ANN search algorithm is used to retrieve the candidate products from the item embedding store by doing an ANN search using the customer embedding, 
-in other words, calculates the similarity between the customer embedding and item embeddings then retrieving the top hundred or so nearest items..
+in other words, calculates the similarity between the customer embedding and item embeddings then retrieves the top hundred or so nearest items.
 
 
 The server uses FAISS~\cite{Faiss} to perform the nearest neighbor search computation on a GPU.

@@ -12,6 +12,7 @@
 *.cb2
 .*.lb
 
+main.M*
 
 docs/Report/main.pdf
 
@@ -305,3 +306,4 @@ TSWLatexianTemp*
 #*Notes.bib
 docs/Report/main.pdf
 **/.DS_Store
+docs/Report/main.M1

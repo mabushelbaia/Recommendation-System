@@ -13,8 +13,8 @@ In order for the system to be useful it has to meet the following specifications
 \subsection{Scalability}
 Scalability implies that it has to be cloud-native, the inference system should apply proper load balancing across multi-node, multi-model deployments.
 
-\subsection{Real-time Predictions}
-To be usable in any website or application, the system should be able to provide real-time predictions, and suggestions, with a few milliseconds latency. \\
+\subsection{Near Real-time Predictions}
+To be usable in any website or application, the system should be able to provide real-time predictions, and suggestions, with a few hundred milliseconds latency. \\
 
 To fulfill this requirement, trained models should run on optimized inference servers or services, the suggested deployment plan is to use
 \textbf{Nvidia Triton}
@@ -22,9 +22,9 @@ To fulfill this requirement, trained models should run on optimized inference se
 inference server~\cite{Triton}, 
 integrated with \textbf{Amazon SageMaker} model deployment~\cite{SageMaker} as infrastructure.
 
-\subsection{Near Real-time Training}
+\subsection{Continuous Training and Deployment}
 
-This implies continuous training and deployment of the model which requires the automation of training and deployment.
+This implies continuous training and deployment of the model which requires the automation of training steps and deployment.
 
 \subsection{Elasticity and Optimization}
 
