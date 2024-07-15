@@ -2,8 +2,8 @@
 \minitoc
 
 The main goal of this solution is to develop a recommendation system for an e-commerce platform. 
-In this context, users are referred to as customers or buyers ( representing individuals interacting with the platform which can be through a website or an app ), 
-while products are referred to as items ( representing the goods offered for sale ).
+In this context, users might be referred to as customers or buyers ( representing individuals interacting with the platform which can be through a website or an app ), 
+while products might be referred to as items ( representing the goods offered for sale ).
 
 To operate all the stages of the recommendation pipeline and the system components, 
 a lot of infrastructure and DevOps work is required, from data ingestion to the deployment of the components, Figure~\ref{fig: SystemComponents} shows a suggested system design by Nvidia.
@@ -46,7 +46,7 @@ To handle the data ingestion, the API gateway exposes the following endpoints:
     \item Adding interactions between customers and products
 \end{itemize}
 
-Such endpoints interact mainly with the storage components to store the data.
+Such endpoints interact mainly with the storage components to store the data, those endpoints are platform-dependent, hence they will not be discussed in this project.
 
 \subsection{Recommendation Endpoints}
 
@@ -56,14 +56,14 @@ To get recommendations for a customer, the API gateway exposes the following end
     \item Get similar products to a product
 \end{itemize}
 
-Those endpoints interact mainly with the recommendation pipeline and the caching layer to get the recommendations.
+Those endpoints interact mainly with the recommendation pipelines (ensembles) and the caching layer to get the recommendations.
 
 The first endpoint queries the caching layer to get the recommendations, and if the offline recommendations are not found in the caching layer, 
-the API gateway queries the recommendation pipeline to get online recommendations, and then stores the recommendations in the caching layer, 
+the API gateway queries the first recommendation pipeline to get online recommendations, and then stores the recommendations in the caching layer, 
 after getting the recommendations from the recommendation pipeline, 
 the API gateway orders the recommendations using the output of the ranking stage and using business rules, then returns the top recommendations to the customer.
 
-In the second endpoint, the API gateway queries a different ensemble that uses the item embedding as a query instead of the user embedding.
+In the second endpoint, the API gateway queries a different ensemble that uses the item embedding as a query instead of the user embedding for the retrieval stage.
 
 \section{Storage Components}
 

@@ -22,7 +22,7 @@ Then it transforms the dataset using the fitted workflow to prepare it for model
 
 To generate the candidate items for each customer, the system starts by retrieving the embeddings of the customer and the products from FEAST (the feature store).
 
-\subsubsection{Two Tower Model Training}
+\subsubsection{Two-Tower Model Training}
 
 During training (offline), the system uses a two-tower model, where the customer and product embeddings are produced through two separate towers, 
 and the output of the two towers is used to compute the similarity between the customer and the products.
